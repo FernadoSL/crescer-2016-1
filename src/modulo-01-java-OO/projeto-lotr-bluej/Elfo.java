@@ -21,6 +21,11 @@ public class Elfo
         this.nome = nome;
         this.flechaQuant = 42;
     }
+    
+    public Elfo(String nome, int flecha){
+        this.nome = nome;
+        this.flechaQuant = flecha;
+    }
 
     /**
      * An example of a method - replace this comment with your own

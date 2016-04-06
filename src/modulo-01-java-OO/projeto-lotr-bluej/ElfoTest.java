@@ -14,9 +14,15 @@ import org.junit.Test;
 public class ElfoTest
 {
     @Test
-    public void testeConstrutorElfo(){
+    public void testeConstrutor1Elfo(){
         Elfo e1TC = new Elfo("ElfoConstrutor");
         assertEquals(true, e1TC.getFlechaQuant() == 42);
+    }
+    
+    @Test
+    public void teteConstrutor2Elfo(){
+        Elfo e2TC = new Elfo("ElfoConstrutor2", 20);
+        assertEquals(true, e2TC.getFlechaQuant() == 20);
     }
     
     @Test
