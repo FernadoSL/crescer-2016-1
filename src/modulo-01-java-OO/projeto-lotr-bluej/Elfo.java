@@ -35,12 +35,11 @@ public class Elfo
         this.flechaQuant--;
     }
     
-    public void atiraFlechaRefactory(boolean acertou, Dwarf anaoAtingido){
+    public void atiraFlechaRefactory(Dwarf anaoAtingido){
     
-        if(acertou){
-            anaoAtingido.tomoFlechada();
-            exp++;
-        }
+        
+        anaoAtingido.tomoFlechada();
+        exp++;
         this.flechaQuant--;
         
     }
