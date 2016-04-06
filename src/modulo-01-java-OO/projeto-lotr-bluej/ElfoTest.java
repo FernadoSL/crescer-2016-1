@@ -26,4 +26,10 @@ public class ElfoTest
         e1AF.atiraFlechaRefactory(d1Teste);
         assertEquals(true, (e1AF.getFlechaQuant() == 41) && (e1AF.getExp() == 1));
     }
+    
+    @Test
+    public void testeToString(){
+        Elfo e1TS = new Elfo("Legolas");
+        assertEquals(e1TS.toStringFlehca(), "Legolas possui " + e1TS.getFlechaQuant() + " flechas e " + e1TS.getExp() + " níves de experiência.");
+    }
 }

@@ -44,6 +44,10 @@ public class Elfo
         
     }
     
+    public String toStringFlehca(){
+        return "Legolas possui " + this.flechaQuant + " flechas e " + this.exp + " níves de experiência.";  
+    }
+    
     public int getFlechaQuant(){
         return this.flechaQuant;
     }
