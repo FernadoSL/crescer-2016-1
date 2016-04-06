@@ -23,12 +23,7 @@ public class LembaSemGlutem
 
     public boolean podeDividirPares(){
         
-        boolean result = false;
-        
-        if((this.quantLembas % 2 == 0) && (this.quantLembas >= 2* numPersonagens))
-            result = true;
-        
-        return result; 
-        
+        return((this.quantLembas % 2 == 0) && (this.quantLembas >= 2* numPersonagens));
+           
     }
 }

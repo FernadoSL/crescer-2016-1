@@ -5,25 +5,25 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Anao
+public class Dwarf
 {
     // instance variables - replace the example below with your own
     private int vida;
-    private String nome;
+    
 
     /**
      * Constructor for objects of class Anao
      */
-    public Anao(String nome)
+    public Dwarf()
     {
         // initialise instance variables
         vida = 110;
-        this.nome = nome;
+        
     }
     
     public void tomoFlechada(){
         
-        this.vida = this.vida - 10;
+        this.vida -= 10;
         
     }
     
