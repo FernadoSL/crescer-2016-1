@@ -1,20 +1,20 @@
 
 /**
- * Write a description of class LembaSemGlutem here.
+ * Write a description of class CestoDeLembas here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class LembaSemGlutem
+public class CestoDeLembas
 {
     // instance variables - replace the example below with your own
     private int quantLembas;
     
 
     /**
-     * Constructor for objects of class LembaSemGlutem
+     * Constructor for objects of class CestoDeLembas
      */
-    public LembaSemGlutem(int quantLembas)
+    public CestoDeLembas(int quantLembas)
     {
         // initialise instance variables
         this.quantLembas = quantLembas;
