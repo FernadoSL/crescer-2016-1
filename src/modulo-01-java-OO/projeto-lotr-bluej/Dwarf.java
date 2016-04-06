@@ -9,16 +9,16 @@ public class Dwarf
 {
     // instance variables - replace the example below with your own
     private int vida;
-    
+    private String nome;
 
     /**
      * Constructor for objects of class Anao
      */
-    public Dwarf()
+    public Dwarf(String nome)
     {
         // initialise instance variables
         this.vida = 110;
-        
+        this.nome = nome;
     }
     
     public void tomoFlechada(){
