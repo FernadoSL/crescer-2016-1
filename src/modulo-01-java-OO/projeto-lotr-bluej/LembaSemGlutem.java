@@ -17,7 +17,7 @@ public class LembaSemGlutem
     public LembaSemGlutem(int quantLembas, int numPersonagens)
     {
         // initialise instance variables
-        this.quantLembas = quant;
+        this.quantLembas = quantLembas;
         this.numPersonagens = numPersonagens;
     }
 
