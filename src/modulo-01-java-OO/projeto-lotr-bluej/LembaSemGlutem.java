@@ -25,7 +25,7 @@ public class LembaSemGlutem
         
         boolean result = false;
         
-        if((this.quant % 2 == 0) && (this.quant >= 2* numPersonagens))
+        if((this.quantLembas % 2 == 0) && (this.quantLembas >= 2* numPersonagens))
             result = true;
         
         return result; 
