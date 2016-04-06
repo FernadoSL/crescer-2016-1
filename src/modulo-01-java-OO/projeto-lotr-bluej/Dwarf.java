@@ -27,4 +27,11 @@ public class Dwarf
         
     }
     
+    public void setNome(String novoNome){
+        this.nome = novoNome;
+    }
+    
+    public String getNome(){
+        return this.nome;
+    }
 }
