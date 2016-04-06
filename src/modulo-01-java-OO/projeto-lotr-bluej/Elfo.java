@@ -43,4 +43,12 @@ public class Elfo
         
         
     }
+    
+    public int getFlechaQuant(){
+        return this.flechaQuant;
+    }
+    
+    public int getExp(){
+        return this.exp;
+    }
 }
