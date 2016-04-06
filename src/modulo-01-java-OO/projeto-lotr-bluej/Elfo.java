@@ -37,10 +37,10 @@ public class Elfo
     
     public void atiraFlechaRefactory(Dwarf anaoAtingido){
     
-        
+        this.flechaQuant--;
         anaoAtingido.tomoFlechada();
         exp++;
-        this.flechaQuant--;
+        
         
     }
 }

@@ -17,7 +17,7 @@ public class Dwarf
     public Dwarf()
     {
         // initialise instance variables
-        vida = 110;
+        this.vida = 110;
         
     }
     
