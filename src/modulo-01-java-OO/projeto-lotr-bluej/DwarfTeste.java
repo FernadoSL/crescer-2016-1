@@ -28,4 +28,18 @@ public class DwarfTeste
         dwarfTF.tomoFlechada();
         assertEquals(true, dwarfTF.getVida() == 100);
     }
+
+    @Test
+    public void dwafNasceVivo(){
+        Dwarf dwarf = new Dwarf("Balin");
+        assertEquals(Status.VIVO, dwarf.getStatus());
+    }
+    
+    @Test
+    public void dwarfTestaMorte(){
+        Dwarf d1 = new Dwarf("dwarfMorto");
+        d1.setVida(10);
+        d1.tomoFlechada();
+        assertEquals(Status.MORTO, d1.getStatus());
+    }
 }
