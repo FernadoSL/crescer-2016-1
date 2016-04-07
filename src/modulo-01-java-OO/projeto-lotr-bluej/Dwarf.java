@@ -30,7 +30,7 @@ public class Dwarf
         }
     }
     
-    public void calculaMorte(){
+    private void calculaMorte(){
         if(this.vida <= 0)
             this.status = Status.MORTO;
     }
