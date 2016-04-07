@@ -24,8 +24,10 @@ public class Dwarf
     
     public void tomoFlechada(){
         
-        this.vida -= 10;
-        this.calculaMorte();
+        if(this.vida > 0){
+            this.vida -= 10;
+            this.calculaMorte();
+        }
     }
     
     public void calculaMorte(){

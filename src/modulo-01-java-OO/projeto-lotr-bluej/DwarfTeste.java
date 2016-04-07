@@ -42,4 +42,12 @@ public class DwarfTeste
         d1.tomoFlechada();
         assertEquals(Status.MORTO, d1.getStatus());
     }
+    
+    @Test
+    public void dwarfComVidaNegativa(){
+        Dwarf d2 = new Dwarf("dwarfUndead");
+        d2.setVida(0);
+        d2.tomoFlechada();
+        assertEquals(0, d2.getVida());
+    }
 }
