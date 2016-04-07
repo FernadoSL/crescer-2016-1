@@ -14,7 +14,7 @@ import org.junit.Test;
 public class DwarfTeste
 {
     @Test
-    public void TesteConstrutorDwarf(){
+    public void dwarfCriadoCom110Vida(){
         
         Dwarf dwarfConstrutor = new Dwarf("DwarfConstrutor");
         assertEquals(true, dwarfConstrutor.getVida() == 110);
@@ -22,7 +22,7 @@ public class DwarfTeste
     }
     
     @Test
-    public void TesteTomoFlechada(){
+    public void dwarfPerde10Vida(){
     
         Dwarf dwarfTF = new Dwarf("DwarfFlechado");
         dwarfTF.tomoFlechada();
