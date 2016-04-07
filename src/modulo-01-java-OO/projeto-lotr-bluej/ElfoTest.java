@@ -14,19 +14,19 @@ import org.junit.Test;
 public class ElfoTest
 {
     @Test
-    public void testeConstrutor1Elfo(){
+    public void elfoCriadoCom42Flechas(){
         Elfo e1TC = new Elfo("ElfoConstrutor");
-        assertEquals(true, e1TC.getFlechaQuant() == 42);
+        assertEquals(42, e1TC.getFlechaQuant());
     }
     
     @Test
-    public void teteConstrutor2Elfo(){
+    public void elfoCriadoComXFlechas(){
         Elfo e2TC = new Elfo("ElfoConstrutor2", 20);
         assertEquals(true, e2TC.getFlechaQuant() == 20);
     }
     
     @Test
-    public void testeAtiraFlecha(){
+    public void aumentoDeExpDiminuiFlechas(){
         Elfo e1AF = new Elfo("ElfoAtirador");
         Dwarf d1Teste = new Dwarf("DwarfAtingido");
         e1AF.atiraFlechaRefactory(d1Teste);
@@ -34,7 +34,7 @@ public class ElfoTest
     }
     
     @Test
-    public void testeToString(){
+    public void fraseLegolas(){
         Elfo e1TS = new Elfo("Legolas");
         assertEquals(e1TS.toStringFlehca(), "Legolas possui " + e1TS.getFlechaQuant() + " flechas e " + e1TS.getExp() + " níves de experiência.");
     }
