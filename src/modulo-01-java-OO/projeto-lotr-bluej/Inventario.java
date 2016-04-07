@@ -10,4 +10,12 @@ public class Inventario{
     public void removeItem(Item item){
         inventario.remove(item);
     }
+    
+    public Item getItem(int i){
+        return inventario.get(i);
+    }
+    
+    public int getSize(){
+        return inventario.size();
+    }
 }
