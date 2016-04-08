@@ -8,6 +8,10 @@ public class Item{
         this.descricao = descricao;    
     }
     
+    public void setQuant(int quant){
+        this.quantidade = quant;
+    }
+    
     public int getQuant(){
         return this.quantidade;
     }

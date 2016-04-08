@@ -46,6 +46,6 @@ public class InventarioTest{
         i3.addItem(faca);
         
         //assert
-        assertEquals("pot, corda, faca, ", i3.getDescricoesItens());
+        assertEquals("pot,corda,faca", i3.getDescricoesItens());
     }
 }
