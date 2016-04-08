@@ -1,8 +1,8 @@
 public class Dwarf
 {
     // instance variables - replace the example below with your own
-    private int vida;
-    private int exp;
+    private int vida = 110;
+    private int exp = 0;
     private String nome;
     private Status status = Status.VIVO;
     private Inventario inventario = new Inventario();
@@ -10,17 +10,12 @@ public class Dwarf
 
     public Dwarf(String nome)
     {
-        // initialise instance variables
-        this.vida = 110;
         this.nome = nome;
-        this.exp = 0;
     }
     
     public Dwarf(String nome, DataTerceiraEra data){
-        this.vida = 110;
         this.nome = nome;
         this.dataNascimento = data;
-        this.exp = 0;
     }
     
     public void tomoFlechada(){ 
