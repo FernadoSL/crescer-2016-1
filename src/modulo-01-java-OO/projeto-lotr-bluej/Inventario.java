@@ -11,6 +11,14 @@ public class Inventario{
         inventario.remove(item);
     }
     
+    public String getDescricoesItens(){
+        String descri = "";
+        for(int i=0; i<this.getSize(); i++){
+            descri = descri + this.getItem(i).getDescricao() + ", ";
+        }
+        return descri;
+    }
+    
     public Item getItem(int i){
         return inventario.get(i);
     }

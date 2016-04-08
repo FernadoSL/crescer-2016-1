@@ -6,7 +6,7 @@ import org.junit.Test;
 public class InventarioTest{
     
     @Test
-    public void Adiciona(){
+    public void adiciona(){
         //arrange
         Item pot = new Item(1, "poção");
         Inventario i1 = new Inventario();
@@ -19,7 +19,7 @@ public class InventarioTest{
     }
     
     @Test
-    public void Remove(){
+    public void remove(){
         //arrange
         Inventario i2 = new Inventario();
         Item corda = new Item(1, "corda");
@@ -30,5 +30,22 @@ public class InventarioTest{
         
         //asert
         assertEquals(0, i2.getSize());
+    }
+    
+    @Test
+    public void descreveItens(){
+        //arrange
+        Inventario i3 = new Inventario();
+        Item pot = new Item(1, "pot");
+        Item corda = new Item(1, "corda");
+        Item faca = new Item(1, "faca");
+        
+        //act
+        i3.addItem(pot);
+        i3.addItem(corda);
+        i3.addItem(faca);
+        
+        //assert
+        assertEquals("pot, corda, faca, ", i3.getDescricoesItens());
     }
 }
