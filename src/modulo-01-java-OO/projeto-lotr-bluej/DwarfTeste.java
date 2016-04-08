@@ -58,8 +58,11 @@ public class DwarfTeste
         Dwarf d3 = new Dwarf("dwarfSortudo", data1);
         d3.setVida(85);
         //act
+        d3.tomoFlechada();
         //assert
         assertEquals(-3333.0, d3.getNumSorte(), 0.1);
+        assertEquals(85, d3.getVida());
+        assertEquals(2, d3.getExp());
     }
     
     @Test
@@ -68,8 +71,11 @@ public class DwarfTeste
         DataTerceiraEra data2 = new DataTerceiraEra(1, 1, 2001);
         Dwarf d4 = new Dwarf("Seixas", data2);
         //act
+        d4.tomoFlechada();
         //assert
         assertEquals(33.0, d4.getNumSorte(), 0.1);
+        assertEquals(0, d4.getExp());
+        assertEquals(110, d4.getVida());
     }
     
     @Test
@@ -78,7 +84,10 @@ public class DwarfTeste
         DataTerceiraEra data3 = new DataTerceiraEra(1, 1, 2000);
         Dwarf d5 = new Dwarf("dwarfAarado", data3);
         //act
+        d5.tomoFlechada();
         //assert
         assertEquals(101.0, d5.getNumSorte(), 0.1);
+        assertEquals(0, d5.getExp());
+        assertEquals(100, d5.getVida());
     }
 }

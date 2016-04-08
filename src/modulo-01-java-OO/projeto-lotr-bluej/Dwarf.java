@@ -2,6 +2,7 @@ public class Dwarf
 {
     // instance variables - replace the example below with your own
     private int vida;
+    private int exp;
     private String nome;
     private Status status = Status.VIVO;
     private Inventario inventario = new Inventario();
@@ -12,19 +13,26 @@ public class Dwarf
         // initialise instance variables
         this.vida = 110;
         this.nome = nome;
+        this.exp = 0;
     }
     
     public Dwarf(String nome, DataTerceiraEra data){
         this.vida = 110;
         this.nome = nome;
         this.dataNascimento = data;
+        this.exp = 0;
     }
     
     public void tomoFlechada(){ 
-        if(this.vida > 0){
-            this.vida -= 10;
-            this.calculaMorte();
+        if(this.getNumSorte() < 0){
+            this.exp += 2;
+        }else if(this.getNumSorte() > 100){
+            if(this.vida > 0){
+                this.vida -= 10;
+                this.calculaMorte();
+            }
         }
+    
     }
     
     private void calculaMorte(){
@@ -72,5 +80,9 @@ public class Dwarf
 
     public Status getStatus(){
         return this.status;
+    }
+    
+    public int getExp(){
+        return this.exp;
     }
 }
