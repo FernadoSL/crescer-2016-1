@@ -21,6 +21,18 @@ public class Inventario{
         descri;
     }
     
+    public Item maiorQuant(){
+        Item maiorQuant = this.getItem(0);
+        
+        for(int i=0; i<this.getSize(); i++){
+            if(this.getItem(i).getQuant()> maiorQuant.getQuant()){
+                maiorQuant = this.getItem(i);
+            }
+        }
+        
+        return maiorQuant;
+    }
+    
     public Item getItem(int i){
         return inventario.get(i);
     }

@@ -48,4 +48,38 @@ public class InventarioTest{
         //assert
         assertEquals("pot,corda,faca", i3.getDescricoesItens());
     }
+    
+    @Test
+    public void maiorQuantItensUnidade(){
+        //arrange
+        Inventario i4 = new Inventario();
+        Item pot = new Item(0, "pot");
+        Item corda = new Item(5, "corda");
+        Item faca = new Item(3, "faca");
+        
+        //act
+        i4.addItem(pot);
+        i4.addItem(corda);
+        i4.addItem(faca);
+        
+        //assert
+        assertEquals(corda, i4.maiorQuant());
+    }
+    
+    @Test
+    public void maiorQuantItensMilhar(){
+        //arrange
+        Inventario i5 = new Inventario();
+        Item pot = new Item(5231, "pot");
+        Item corda = new Item(2891, "corda");
+        Item faca = new Item(7590, "faca");
+        
+        //act
+        i5.addItem(pot);
+        i5.addItem(corda);
+        i5.addItem(faca);
+        
+        //assert
+        assertEquals(faca, i5.maiorQuant());
+    }
 }
