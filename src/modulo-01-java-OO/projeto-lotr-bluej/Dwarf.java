@@ -14,8 +14,13 @@ public class Dwarf
         this.nome = nome;
     }
     
-    public void tomoFlechada(){
-        
+    public Dwarf(String nome, DataTerceiraEra data){
+        this.vida = 110;
+        this.nome = nome;
+        this.dataNascimento = data;
+    }
+    
+    public void tomoFlechada(){ 
         if(this.vida > 0){
             this.vida -= 10;
             this.calculaMorte();
@@ -33,6 +38,20 @@ public class Dwarf
     
     public void removeItem(Item item){
         this.inventario.removeItem(item);
+    }
+    
+    public double getNumSorte(){
+              
+        if(dataNascimento.ehBissexto() && (this.vida >= 80 && this.vida <= 90)){
+            return 101.0 * -33;
+        }
+        else if(!dataNascimento.ehBissexto() && (this.nome.equalsIgnoreCase("Seixas") || this.nome.equalsIgnoreCase("Meireles"))){
+            return (101.0 * 33)%100;
+        }
+        else{
+            return 101.0;
+        }
+  
     }
     
     public void setNome(String novoNome){

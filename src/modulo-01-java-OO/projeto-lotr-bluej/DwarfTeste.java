@@ -50,4 +50,35 @@ public class DwarfTeste
         d2.tomoFlechada();
         assertEquals(0, d2.getVida());
     }
+    
+    @Test
+    public void numSorteBissexto(){
+        //arrange
+        DataTerceiraEra data1 = new DataTerceiraEra(28, 02, 1992);
+        Dwarf d3 = new Dwarf("dwarfSortudo", data1);
+        d3.setVida(85);
+        //act
+        //assert
+        assertEquals(-3333.0, d3.getNumSorte(), 0.1);
+    }
+    
+    @Test
+    public void numSorteNaoBissexto(){
+        //arrange
+        DataTerceiraEra data2 = new DataTerceiraEra(1, 1, 2001);
+        Dwarf d4 = new Dwarf("Seixas", data2);
+        //act
+        //assert
+        assertEquals(33.0, d4.getNumSorte(), 0.1);
+    }
+    
+    @Test
+    public void numSorteQualquerOutro(){
+        //arrange
+        DataTerceiraEra data3 = new DataTerceiraEra(1, 1, 2000);
+        Dwarf d5 = new Dwarf("dwarfAarado", data3);
+        //act
+        //assert
+        assertEquals(101.0, d5.getNumSorte(), 0.1);
+    }
 }
