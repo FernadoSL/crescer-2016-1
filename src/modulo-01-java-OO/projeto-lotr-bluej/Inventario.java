@@ -33,6 +33,19 @@ public class Inventario{
         return maiorQuant;
     }
     
+    public void ordenarItens(){
+        ArrayList<Item> iTemp = new ArrayList<Item>();
+        
+        for(int i=1; i<=this.maiorQuant().getQuant(); i++){
+          for(int j=0; i<this.getSize(); j++){
+              if(this.getItem(j).getQuant() == i){
+                  iTemp.add(this.getItem(j));
+              }
+          }
+        }
+        
+    }
+    
     public Item getItem(int i){
         return inventario.get(i);
     }
