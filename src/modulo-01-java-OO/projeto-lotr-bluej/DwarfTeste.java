@@ -90,4 +90,20 @@ public class DwarfTeste
         assertEquals(0, d5.getExp());
         assertEquals(100, d5.getVida());
     }
+    
+    @Test
+    public void sorteNosItens(){
+        //arrange
+        DataTerceiraEra data4 = new DataTerceiraEra(28, 02, 1992);
+        Dwarf d6 = new Dwarf("O Alquimista", data4);
+        Item pot = new Item(1, "poção");
+        //act
+        for(int i=0; i<3; i++){
+            d6.tomoFlechada();
+        }
+        d6.addItem(pot);
+        d6.tentarSorte();
+        //assert
+        assertEquals(1001, d6.getInventario().getItem(0).getQuant());
+    }
 }

@@ -57,6 +57,14 @@ public class Dwarf
   
     }
     
+    public void tentarSorte(){
+        if(getNumSorte() == - 3333.0){
+            for(int i=0; i<this.inventario.getSize(); i++){
+                this.inventario.getItem(i).setQuant(this.inventario.getItem(i).getQuant() + 1000);
+            }
+        }
+    }
+    
     public void setNome(String novoNome){
         this.nome = novoNome;
     }
@@ -79,5 +87,9 @@ public class Dwarf
     
     public int getExp(){
         return this.exp;
+    }
+    
+    public Inventario getInventario(){
+        return this.inventario;
     }
 }
