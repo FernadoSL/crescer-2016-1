@@ -92,7 +92,7 @@ public class DwarfTeste
     }
     
     @Test
-    public void sorteNosItens(){
+    public void sorteNosItens1Item(){
         //arrange
         DataTerceiraEra data4 = new DataTerceiraEra(28, 02, 1992);
         Dwarf d6 = new Dwarf("O Alquimista", data4);
@@ -105,5 +105,27 @@ public class DwarfTeste
         d6.tentarSorte();
         //assert
         assertEquals(1001, d6.getInventario().getItem(0).getQuant());
+    }
+    
+    @Test
+    public void sorteNosItens3Itens(){
+        //arrange
+        DataTerceiraEra data4 = new DataTerceiraEra(1, 1, 2000);
+        Dwarf d7 = new Dwarf("O Mercador", data4);
+        Item pot = new Item(1, "poção");
+        Item faca = new Item(2, "faca");
+        Item corda = new Item(1, "corda");
+        //act
+        for(int i=0; i<3; i++){
+            d7.tomoFlechada();
+        }
+        d7.addItem(pot);
+        d7.addItem(faca);
+        d7.addItem(corda);
+        d7.tentarSorte();
+        //assert
+        assertEquals(1001, d7.getInventario().getItem(0).getQuant());
+        assertEquals(1002, d7.getInventario().getItem(1).getQuant());
+        assertEquals(1001, d7.getInventario().getItem(2).getQuant());
     }
 }
