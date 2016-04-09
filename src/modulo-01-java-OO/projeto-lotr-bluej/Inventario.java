@@ -34,17 +34,23 @@ public class Inventario{
     }
     
     public void ordenarItens(){
-        ArrayList<Item> iTemp = new ArrayList<Item>();
+        Inventario iTemp = new Inventario();
         
         for(int i=1; i<=this.maiorQuant().getQuant(); i++){
-          for(int j=0; i<this.getSize(); j++){
+          for(int j=0; j<this.getSize(); j++){
               if(this.getItem(j).getQuant() == i){
-                  iTemp.add(this.getItem(j));
+                  iTemp.addItem(this.getItem(j));
               }
           }
         }
         
-    }
+        inventario.clear();
+        
+        for(int i=0; i<iTemp.getSize(); i++){
+            this.addItem(iTemp.getItem(i));
+        }
+        
+    }     
     
     public Item getItem(int i){
         return inventario.get(i);
@@ -53,4 +59,5 @@ public class Inventario{
     public int getSize(){
         return inventario.size();
     }
+    
 }

@@ -82,4 +82,27 @@ public class InventarioTest{
         //assert
         assertEquals(faca, i5.maiorQuant());
     }
+    
+    @Test
+    public void ordenarCrescente(){
+        //arrange
+        Inventario i6 = new Inventario();
+        Item pot = new Item(410, "pot");
+        Item corda = new Item(208, "corda");
+        Item faca = new Item(323, "faca");
+        Item comida = new Item(602, "comida");
+        
+        //act
+        i6.addItem(pot);
+        i6.addItem(corda);
+        i6.addItem(comida);
+        i6.addItem(faca);
+        i6.ordenarItens();
+        
+        //assert
+        assertEquals(i6.getItem(0), corda);
+        assertEquals(i6.getItem(1), faca);
+        assertEquals(i6.getItem(2), pot);
+        assertEquals(i6.getItem(3), comida);
+    }
 }
