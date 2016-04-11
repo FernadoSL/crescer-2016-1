@@ -60,4 +60,24 @@ public class HobbitsContadoresTest{
         //assert
         assertEquals(18, h5.obterMaiorMultiploDeTresAte(20));
     }
+    
+    @Test
+    public void arrayMultiploDeTresAteh12(){
+        //arrange
+        HobbitsContadores h6 = new HobbitsContadores();
+        ArrayList<Integer>  array1 = new ArrayList<>(Arrays.asList(0, 3, 6, 9, 12));
+        
+        //assert
+        assertEquals(array1, h6.obterMultiplosDeTresAte(12));
+    }
+    
+    @Test
+    public void arrayMultiploDeTresAteh25(){
+        //arrange
+        HobbitsContadores h7 = new HobbitsContadores();
+        ArrayList<Integer>  array1 = new ArrayList<>(Arrays.asList(0, 3, 6, 9, 12, 15, 18, 21, 24));
+        
+        //assert
+        assertEquals(array1, h7.obterMultiplosDeTresAte(25));
+    }
 }

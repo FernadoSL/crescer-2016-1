@@ -41,17 +41,31 @@ public class HobbitsContadores{
     }
     
     //Foi substituido o uso da array de inteiros por uma variavel de inteiro
+    //Foi corrigido o numero máximo de repetições do for
+    //O método foi otimizado para calcular os  múltiplos de tres sem precisar de testes
     public int obterMaiorMultiploDeTresAte(int numero) {
         
         int maiorMultiplo = 0;
 
         for (int i = 3; i <= numero; i += 3) {
-            if (i % 3 == 0) {
-                  maiorMultiplo = i;
-            }
+            maiorMultiplo = i;
         }
     
         return maiorMultiplo;
         
+    }
+    
+    //Foi corrigida a array para evitar a repetição do número zero
+    //Foi corrigido o numero máximo de repetições do for
+    //O método foi otimizado para calcular os  múltiplos de tres sem precisar de testes
+    public ArrayList<Integer> obterMultiplosDeTresAte(int numero) {
+        
+        ArrayList<Integer> multiplos = new ArrayList<>();
+    
+        for (int i = 0; i <= numero; i += 3) {
+            multiplos.add(i);
+        }
+    
+        return multiplos;
     }
 }
