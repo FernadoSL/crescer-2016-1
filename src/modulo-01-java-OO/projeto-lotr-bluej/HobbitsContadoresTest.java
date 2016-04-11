@@ -33,4 +33,31 @@ public class HobbitsContadoresTest{
         assertEquals(1220, h2.calculaDiferenca(arrayDePares));
 
     }
+    
+    @Test
+    public void calculaMaiorMultiploDeTresAtehDez(){
+        //arrange
+        HobbitsContadores h3 = new HobbitsContadores();
+    
+        //assert
+        assertEquals(9, h3.obterMaiorMultiploDeTresAte(10));
+    }
+    
+    @Test
+    public void calculaMaiorMultiploDeTresAtehQuinze(){
+        //arrange
+        HobbitsContadores h4 = new HobbitsContadores();
+        
+        //assert
+        assertEquals(15, h4.obterMaiorMultiploDeTresAte(15));
+    }
+    
+    @Test
+    public void calculaMaiorMultiploDeTresAtehVinte(){
+        //arrange
+        HobbitsContadores h5 = new HobbitsContadores();
+        
+        //assert
+        assertEquals(18, h5.obterMaiorMultiploDeTresAte(20));
+    }
 }

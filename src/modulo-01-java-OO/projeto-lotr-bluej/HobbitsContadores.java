@@ -39,4 +39,19 @@ public class HobbitsContadores{
         
         return x - mmc;
     }
+    
+    //Foi substituido o uso da array de inteiros por uma variavel de inteiro
+    public int obterMaiorMultiploDeTresAte(int numero) {
+        
+        int maiorMultiplo = 0;
+
+        for (int i = 3; i <= numero; i += 3) {
+            if (i % 3 == 0) {
+                  maiorMultiplo = i;
+            }
+        }
+    
+        return maiorMultiplo;
+        
+    }
 }
