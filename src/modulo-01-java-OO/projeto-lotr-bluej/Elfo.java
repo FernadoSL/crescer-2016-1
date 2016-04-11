@@ -1,52 +1,27 @@
 
-/**
- * Write a description of class Elfo here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class Elfo
-{
-    // instance variables - replace the example below with your own
-    private String nome;
-    private int exp;
+public class Elfo extends PersonagemTerraMedia{
+    
     private int flechaQuant;
 
-    /**
-     * Constructor for objects of class Elfo
-     */
-    public Elfo(String nome)
-    {
-        // initialise instance variables
-        this.nome = nome;
+    public Elfo(String nome){
+        super(nome);
         this.flechaQuant = 42;
     }
     
     public Elfo(String nome, int flecha){
-        this.nome = nome;
+        super(nome);
         this.flechaQuant = flecha;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public void atiraFlecha()
-    {
-        // put your code here
+    public void atiraFlecha(){
         this.exp++;
         this.flechaQuant--;
     }
     
     public void atiraFlechaRefactory(Dwarf anaoAtingido){
-    
         this.flechaQuant--;
         anaoAtingido.tomoFlechada();
         exp++;
-        
-        
     }
     
     public String toStringFlehca(){
@@ -57,7 +32,5 @@ public class Elfo
         return this.flechaQuant;
     }
     
-    public int getExp(){
-        return this.exp;
-    }
+    
 }
