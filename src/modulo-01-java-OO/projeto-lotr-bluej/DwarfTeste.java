@@ -132,4 +132,30 @@ public class DwarfTeste
         assertEquals(1002, d7.getInventario().getItem(1).getQuant());
         assertEquals(1001, d7.getInventario().getItem(2).getQuant());
     }
+    
+    @Test
+    public void comparaPrimeiroMenosVida(){
+        //arrange
+        Dwarf d1 = new Dwarf("D1");
+        Dwarf d2 = new Dwarf("D2");
+        
+        //act
+        d1.tomoFlechada();
+        
+        //assert
+        assertEquals(d1, Dwarf.descobrirMenosVida(d1, d2));
+    }
+    
+    @Test
+    public void comparaSegundoMenosVida(){
+        //arrange
+        Dwarf d1 = new Dwarf("D1");
+        Dwarf d2 = new Dwarf("D2");
+        
+        //act
+        d2.tomoFlechada();
+        
+        //assert
+        assertEquals(d2, Dwarf.descobrirMenosVida(d1, d2));
+    }
 }
