@@ -51,8 +51,4 @@ public class Dwarf extends PersonagemTerraMedia{
         }
     }
 
-    public Status getStatus(){
-        return this.status;
-    }
-    
 }

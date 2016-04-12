@@ -35,6 +35,10 @@ public class PersonagemTerraMedia{
         return this.vida;
     }
     
+    public Status getStatus(){
+        return this.status;
+    }
+    
     public Inventario getInventario(){
         return this.inventario;
     }
