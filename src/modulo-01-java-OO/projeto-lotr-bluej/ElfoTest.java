@@ -29,7 +29,7 @@ public class ElfoTest
     public void aumentoDeExpDiminuiFlechas(){
         Elfo e1AF = new Elfo("ElfoAtirador");
         Dwarf d1Teste = new Dwarf("DwarfAtingido");
-        e1AF.atiraFlechaRefactory(d1Teste);
+        e1AF.atiraFlecha(d1Teste);
         assertEquals(true, (e1AF.getFlechaQuant() == 41) && (e1AF.getExp() == 1));
     }
     

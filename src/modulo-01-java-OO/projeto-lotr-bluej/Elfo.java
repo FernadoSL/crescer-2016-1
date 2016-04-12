@@ -1,7 +1,7 @@
 
 public class Elfo extends PersonagemTerraMedia{
     
-    private int flechaQuant;
+    protected int flechaQuant;
 
     public Elfo(String nome){
         super(nome);
@@ -13,12 +13,7 @@ public class Elfo extends PersonagemTerraMedia{
         this.flechaQuant = flecha;
     }
 
-    public void atiraFlecha(){
-        this.exp++;
-        this.flechaQuant--;
-    }
-    
-    public void atiraFlechaRefactory(Dwarf anaoAtingido){
+    public void atiraFlecha(Dwarf anaoAtingido){
         this.flechaQuant--;
         anaoAtingido.tomoFlechada();
         exp++;
