@@ -1,6 +1,7 @@
 
 public class PersonagemTerraMedia{
     
+    protected Status status = Status.VIVO;
     protected int exp;
     protected int vida;
     protected String nome;

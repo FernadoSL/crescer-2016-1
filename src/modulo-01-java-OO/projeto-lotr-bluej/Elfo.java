@@ -5,11 +5,13 @@ public class Elfo extends PersonagemTerraMedia{
 
     public Elfo(String nome){
         super(nome);
+        this.vida = 100;
         this.flechaQuant = 42;
     }
     
     public Elfo(String nome, int flecha){
         super(nome);
+        this.vida = 100;
         this.flechaQuant = flecha;
     }
 

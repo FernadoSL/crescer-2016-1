@@ -1,5 +1,4 @@
 public class Dwarf extends PersonagemTerraMedia{
-    private Status status = Status.VIVO;
     private DataTerceiraEra dataNascimento = new DataTerceiraEra(1, 1, 1);
 
     public Dwarf(String nome){
