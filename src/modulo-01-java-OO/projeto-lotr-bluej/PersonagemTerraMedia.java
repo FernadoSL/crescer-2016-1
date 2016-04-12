@@ -3,7 +3,7 @@ public class PersonagemTerraMedia{
     
     protected Status status = Status.VIVO;
     protected int exp;
-    protected int vida;
+    protected double vida;
     protected String nome;
     protected Inventario inventario = new Inventario();
     
@@ -31,12 +31,8 @@ public class PersonagemTerraMedia{
         this.nome = novoNome;
     }
     
-    public int getVida(){
+    public double getVida(){
         return this.vida;
-    }
-        
-    public void setVida(int vida){
-        this.vida = vida;
     }
     
     public Inventario getInventario(){

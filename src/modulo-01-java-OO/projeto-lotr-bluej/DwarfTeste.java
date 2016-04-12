@@ -38,17 +38,19 @@ public class DwarfTeste
     @Test
     public void dwarfTestaMorte(){
         Dwarf d1 = new Dwarf("dwarfMorto");
-        d1.setVida(10);
-        d1.tomoFlechada();
+        for(int i=0; i<11; i++){
+            d1.tomoFlechada();
+        }
         assertEquals(Status.MORTO, d1.getStatus());
     }
     
     @Test
     public void dwarfComVidaNegativa(){
         Dwarf d2 = new Dwarf("dwarfUndead");
-        d2.setVida(0);
-        d2.tomoFlechada();
-        assertEquals(0, d2.getVida());
+         for(int i=0; i<12; i++){
+            d2.tomoFlechada();
+        }
+        assertEquals(0, d2.getVida(), 0);
     }
     
     @Test
@@ -56,12 +58,14 @@ public class DwarfTeste
         //arrange
         DataTerceiraEra data1 = new DataTerceiraEra(28, 02, 1992);
         Dwarf d3 = new Dwarf("dwarfSortudo", data1);
-        d3.setVida(85);
+        
         //act
-        d3.tomoFlechada();
+         for(int i=0; i<3; i++){
+            d3.tomoFlechada();
+        }
         //assert
         assertEquals(-3333.0, d3.getNumSorte(), 0.1);
-        assertEquals(85, d3.getVida());
+        assertEquals(90, d3.getVida(), 0);
         assertEquals(2, d3.getExp());
     }
     
@@ -75,7 +79,7 @@ public class DwarfTeste
         //assert
         assertEquals(33.0, d4.getNumSorte(), 0.1);
         assertEquals(0, d4.getExp());
-        assertEquals(110, d4.getVida());
+        assertEquals(110, d4.getVida(), 0);
     }
     
     @Test
@@ -88,7 +92,7 @@ public class DwarfTeste
         //assert
         assertEquals(101.0, d5.getNumSorte(), 0.1);
         assertEquals(0, d5.getExp());
-        assertEquals(100, d5.getVida());
+        assertEquals(100, d5.getVida(), 0);
     }
     
     @Test
