@@ -8,6 +8,11 @@ public class Item{
         this.descricao = descricao;    
     }
     
+    public boolean equals(Object obj){
+        Item i1 = (Item)obj;
+        return (this.quantidade == i1.getQuant()) && (this.descricao.equalsIgnoreCase(i1.getDescricao()));
+    }
+    
     public void setQuant(int quant){
         this.quantidade = quant;
     }
