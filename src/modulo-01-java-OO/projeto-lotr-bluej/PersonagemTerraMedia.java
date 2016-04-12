@@ -1,5 +1,5 @@
 
-public class PersonagemTerraMedia{
+public abstract class PersonagemTerraMedia{
     
     protected Status status = Status.VIVO;
     protected int exp;
