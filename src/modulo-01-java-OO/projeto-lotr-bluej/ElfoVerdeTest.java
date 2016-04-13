@@ -6,6 +6,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class ElfoVerdeTest{
+    
+    @After
+    public void limpaElfos(){
+        System.gc();
+    }
+    
     @Test
     public void expEmDobro(){
         //arrange

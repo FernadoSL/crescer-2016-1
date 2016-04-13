@@ -26,6 +26,11 @@ public class Elfo extends PersonagemTerraMedia{
         return "Legolas possui " + this.flechaQuant + " flechas e " + this.exp + " níves de experiência.";  
     }
     
+    protected void finalize() throws Throwable{
+        super.finalize();
+        this.populacao--;
+    }
+    
     public int getFlechaQuant(){
         return this.flechaQuant;
     }

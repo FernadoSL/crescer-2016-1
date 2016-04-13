@@ -6,8 +6,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class ElfoNoturnoTest{
+   
+   @After
+    public void limpaElfos(){
+        System.gc();
+    } 
+    
    @Test
-    public void umaFlechada(){
+   public void umaFlechada(){
         //arrange
         Elfo e1 = new ElfoNoturno("Night");
         
@@ -17,7 +23,7 @@ public class ElfoNoturnoTest{
         //assert
         assertEquals(3, e1.getExp());
         assertEquals(95, e1.getVida(), 0);
-    }
+   }
     
    @Test
     public void duasFlechadas(){

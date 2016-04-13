@@ -13,6 +13,12 @@ import org.junit.Test;
  */
 public class ElfoTest
 {
+    
+    @After
+    public void limpaElfos(){
+        System.gc();
+    }
+    
     @Test
     public void elfoCriadoCom42Flechas(){
         Elfo e1TC = new Elfo("ElfoConstrutor");
@@ -42,13 +48,11 @@ public class ElfoTest
     @Test
     public void contaDoisElfo(){
         //arrange
-        int esperado = Elfo.populacao + 2;
         Elfo e1 = new Elfo("E1");
         Elfo e2 = new Elfo("E2");
-        int obtido = Elfo.populacao;
         
         //assert
-        assertEquals(esperado, obtido);
+        assertEquals(2, Elfo.populacao);
     }
     
     
