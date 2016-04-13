@@ -2,16 +2,17 @@
 public class Elfo extends PersonagemTerraMedia{
     
     protected int flechaQuant;
+    protected static int populacao;
 
     public Elfo(String nome){
         super(nome);
         this.vida = 100;
         this.flechaQuant = 42;
+        populacao++;
     }
     
     public Elfo(String nome, int flecha){
-        super(nome);
-        this.vida = 100;
+        this(nome);
         this.flechaQuant = flecha;
     }
 

@@ -38,4 +38,18 @@ public class ElfoTest
         Elfo e1TS = new Elfo("Legolas");
         assertEquals(e1TS.toStringFlehca(), "Legolas possui " + e1TS.getFlechaQuant() + " flechas e " + e1TS.getExp() + " níves de experiência.");
     }
+    
+    @Test
+    public void contaDoisElfo(){
+        //arrange
+        int esperado = Elfo.populacao + 2;
+        Elfo e1 = new Elfo("E1");
+        Elfo e2 = new Elfo("E2");
+        int obtido = Elfo.populacao;
+        
+        //assert
+        assertEquals(esperado, obtido);
+    }
+    
+    
 }
