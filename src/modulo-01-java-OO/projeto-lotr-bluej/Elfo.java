@@ -31,6 +31,16 @@ public class Elfo extends PersonagemTerraMedia{
         this.populacao--;
     }
     
+
+    public boolean equals(Object o){
+        Elfo e1 = (Elfo)o;
+        return e1.getNome().equalsIgnoreCase(this.nome) && e1.getStatus().equals(this.status);
+    }
+    
+    public int hashCode(){
+        return this.getStatus().toString().length()*10;
+    }
+    
     public int getFlechaQuant(){
         return this.flechaQuant;
     }

@@ -20,4 +20,6 @@ public class ElfoNoturno extends Elfo{
         if(this.vida < 1)
             this.status = Status.MORTO;
     }
+    
+    
 }
