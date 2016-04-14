@@ -19,6 +19,8 @@ public abstract class PersonagemTerraMedia{
         this.inventario.removeItem(item);
     }
     
+    public abstract void tentarSorte();
+    
     @Override
     public boolean equals(Object o){
         System.out.println("Passou no equals");

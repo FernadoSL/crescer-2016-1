@@ -31,6 +31,7 @@ public class Elfo extends PersonagemTerraMedia{
         this.populacao--;
     }
     
+    public void tentarSorte(){};
     
     public int getFlechaQuant(){
         return this.flechaQuant;
