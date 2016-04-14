@@ -64,51 +64,55 @@ public class ExercitoElfosTest{
         ex4.alista(elfo3);
         ex4.alista(elfo4);
         ex4.alista(elfo5);
-        boolean esperado = ex4.buscaNome("Fanfarrão").equals(elfo5);
+        boolean esperado = ex4.buscar("Fanfarrão").equals(elfo5);
         
         //asssert
         assertEquals(true, esperado);
     }
-    
-    @Test 
-    public void alistaDoisElfosEAgrupa(){
-        //arrange
-        ExercitoElfos ex2 = new ExercitoElfos();
-        Elfo elfo6 = new ElfoVerde("Legolas");
-        Elfo elfo7 = new ElfoVerde("Sla");
-        //act
-        ex2.alista(elfo6);
-        ex2.alista(elfo7);
-        ex2.agruparStatus();
-        //verifica se os elfos estão no exercito de agrupados por status
-        boolean obtido = ex2.getExercitoStatus().containsValue(elfo6) && ex2.getExercitoStatus().containsValue(elfo7);
-        //assert
-        assertEquals(true, obtido);
+        
+    @Test
+    public void buscaElfosMortos() {
+        // Arrange
+        ExercitoElfos exercito = criarExercitoDeMortosEVivos();
+        exercito.agruparStatus();
+        ArrayList<Elfo> mortos = exercito.buscar(Status.MORTO);
+        // Assert
+        assertTrue(mortos.contains(exercito.buscar("Dead Elf 1")));
+        assertTrue(mortos.contains(exercito.buscar("Dead Elf 2")));
     }
     
-    @Test 
-    public void alistaElfosEChamaOsMortos(){
-        //arrange
-        ExercitoElfos ex6 = new ExercitoElfos();
-        Elfo elfo8 = new ElfoVerde("Legolas");
-        Elfo elfo9 = new ElfoNoturno("Sla");
-        Elfo elfo10 = new ElfoNoturno("Sla2");
-        //act
-        while(elfo9.getStatus() == Status.VIVO){
-            elfo9.atiraFlecha(new Dwarf("Imortal"));
+    
+    private ExercitoElfos criarExercitoDeMortosEVivos() {
+        ElfoVerde elfoVivo1 = new ElfoVerde("Green 1");
+        ElfoNoturno elfoVivo2 = new ElfoNoturno("Aa");
+        ElfoVerde elfoVivo3 = new ElfoVerde("BB");
+        Elfo elfoMorto1 = criarElfoEMataLo("Dead Elf 1");
+        Elfo elfoMorto2 = criarElfoEMataLo("Dead Elf 2");
+        ExercitoElfos exercito = new ExercitoElfos();
+        exercito.alista(elfoMorto1);
+        exercito.alista(elfoMorto2);
+        exercito.alista(elfoVivo1);
+        exercito.alista(elfoVivo2);
+        exercito.alista(elfoVivo3);
+        return exercito;
+    }
+    
+    private Elfo criarElfoEMataLo(String nome) {
+        Elfo elfo = new ElfoNoturno(nome);
+        // Forçando o hara-kiri
+        for (int i = 0; i < 90; i++) {
+            elfo.atiraFlecha(new Dwarf("Gimli"));
         }
-        
-        while(elfo10.getStatus() == Status.VIVO){
-            elfo10.atiraFlecha(new Dwarf("Imortal"));
-        }
-        
-        ex6.alista(elfo8);
-        ex6.alista(elfo9);
-        ex6.alista(elfo10);
-        ex6.agruparStatus();
-        
-        ArrayList<Elfo> esperado = new ArrayList<>(Arrays.asList(elfo9, elfo10));
-        //assert
-        assertEquals(esperado, ex6.buscar(Status.MORTO));
+        return elfo;
     }
 }
+
+
+
+
+
+
+
+
+
+

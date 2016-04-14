@@ -19,6 +19,19 @@ public abstract class PersonagemTerraMedia{
         this.inventario.removeItem(item);
     }
     
+    @Override
+    public boolean equals(Object o){
+        System.out.println("Passou no equals");
+        PersonagemTerraMedia p1 = (PersonagemTerraMedia)o;
+        return super.equals(o) && p1.getNome().equals(this.nome) && p1.getStatus().equals(this.status);
+    }
+    
+    @Override
+    public int hashCode(){
+        System.out.println("Passou no hashCode");
+        return this.getStatus().hashCode()*13;
+    }
+    
     public int getExp(){
         return this.exp;
     }
