@@ -16,15 +16,14 @@ public class ArteDaGuerra implements Estrategia{
             
             boolean elfoNotuAtk = elfoAtacante instanceof ElfoNoturno;
             
-            if(elfoNotuAtk){
-                if( (int)elfoNotuQuant > 0 ){
+            if(elfoNotuAtk && (int)elfoNotuQuant > 0){
+                for(int i=0; i<d1.size() && i<=elfoNotuQuant; i++){
+                    elfoAtacante.atiraFlecha(d1.get(i));
                     elfoNotuQuant--;
-                    for(int i=0; i<d1.size(); i++){
-                        elfoAtacante.atiraFlecha(d1.get(i));  
-                    }
-                    atacaram.add(elfoAtacante);
-                }   
-            }else{
+                }
+                atacaram.add(elfoAtacante);
+                
+            }else if(!elfoNotuAtk){
                for(int i=0; i<d1.size(); i++){
                   elfoAtacante.atiraFlecha(d1.get(i));
                }

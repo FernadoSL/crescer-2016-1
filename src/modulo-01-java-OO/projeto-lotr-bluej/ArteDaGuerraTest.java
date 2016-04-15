@@ -17,10 +17,10 @@ public class ArteDaGuerraTest{
         ex.atacar(est1, criaHordaDwarf(2));
         
         //assert
-        assertEquals(est1.getOrdem().size(), 3);
+        assertEquals(est1.getOrdem().size(), 2);
         assertEquals(est1.getOrdem().get(0) instanceof ElfoNoturno, true);
-        assertEquals(est1.getOrdem().get(1) instanceof ElfoNoturno, true);
-        assertEquals(est1.getOrdem().get(2) instanceof ElfoVerde, true);
+        
+        assertEquals(est1.getOrdem().get(1) instanceof ElfoVerde, true);
     }
     
     @Test
@@ -38,7 +38,7 @@ public class ArteDaGuerraTest{
         ex.atacar(est1, criaHordaDwarf(2));
          
         //assert
-        assertEquals(est1.getOrdem().size(), 3);
+        assertEquals(est1.getOrdem().size(), 2);
     }
     
     @Test
