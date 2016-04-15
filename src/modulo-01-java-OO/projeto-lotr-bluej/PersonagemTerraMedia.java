@@ -23,7 +23,6 @@ public abstract class PersonagemTerraMedia{
     
     @Override
     public boolean equals(Object o){
-        System.out.println("Passou no equals");
         PersonagemTerraMedia p1 = (PersonagemTerraMedia)o;
         return super.equals(o) && p1.getNome().equals(this.nome) && p1.getStatus().equals(this.status);
     }
