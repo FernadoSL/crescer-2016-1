@@ -105,6 +105,10 @@ public class ExercitoElfosTest{
         }
         return elfo;
     }
+    
+    public void ataque(Estrategia estrategia){
+        
+    }
 }
 
 

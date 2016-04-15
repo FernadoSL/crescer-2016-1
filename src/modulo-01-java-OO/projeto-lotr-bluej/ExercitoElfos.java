@@ -38,6 +38,10 @@ public class ExercitoElfos{
             return this.exercitoStatus.get(status);
     }
 
+    public void atacar(Estrategia estr, ArrayList<Dwarf> d1){
+        estr.ataque(this, d1);
+    }
+    
     
     public HashMap getExercito(){
         return this.exercito1;
