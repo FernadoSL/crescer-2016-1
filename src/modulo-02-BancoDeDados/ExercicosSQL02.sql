@@ -14,7 +14,7 @@ Select NomeEmpregado, datediff(Month, DataAdmissao, convert(datetime, '31/12/200
 where  DataAdmissao BETWEEN convert(datetime,'01/05/1980', 103) and convert(datetime,'20/01/1982', 103)
 
 --4
-Select Cargo, COUNT(1) as NumeroEmpregados From Empregado Group By Cargo;
+Select top 1 Cargo, COUNT(1) as NumeroEmpregados From Empregado Group By Cargo Order by count(IDEmpregado) desc;
 
 --6
 select nome, 
@@ -37,9 +37,10 @@ select Max(idassociado)+1 as ProximoId from Associado
 --10
 truncate table CidadeAux
 insert into CidadeAux (IDCidade, nome, uf) 
-select count(*), nome, UF  from cidade
+select MIN(IDCidade) as menorID, Nome, uf
+from cidade
 group by uf, Nome
-having count(*)=1
+
 
 --11
 update Cidade
@@ -67,4 +68,12 @@ select NomeEmpregado, salario,
 		when salario > 2326 then 27.5
 		else 15
 	end as PorcentagemImposto from Empregado
+
+--14
+delete from Cidade
+where (select Nome from cidade
+	   group by UF
+	   having count(UF)>1)
+
+
 
