@@ -44,7 +44,7 @@ group by uf, Nome
 
 --11
 update Cidade
-	set nome = '*'
+	set nome = '*' + Nome
 where Nome in
   (select Nome from Cidade
    group by Nome
