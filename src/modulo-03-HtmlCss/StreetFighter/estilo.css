@@ -1,0 +1,57 @@
+body{
+  background-image: url(maxresdefault.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.main-menu{
+  Height: 100px;
+  width: 800px;
+  border-style: solid;
+  border-color: white;
+  border-width: thin;
+  margin: 300 auto;
+  background-color: rgba(40,40,40,0.75);
+  border-radius: 30px;
+}
+
+.main-menu td{
+    height: 100px;
+    width: 200px;
+    padding-left: 40;
+}
+
+.main-menu a{
+  font-size: x-large;
+  color: white;
+  font-family: arials;
+  text-decoration: none;
+}
+
+.titulo-pagina{
+  height: 100px;
+  border-style: solid;
+  border-color: gray;
+  margin: 0 300;
+  background-color: gray;
+  padding-left: 20;
+}
+
+.titulo-pagina p{
+  font-size:
+  xx-large;
+  color: white;
+  font-family: arials
+}
+
+.conteudo-pagina{
+   background-color: rgb(230,230,230);
+   margin: 0 300;
+   padding: 30 30;
+   overflow: hidden;
+}
+
+.conteudo-pagina img{
+  float:left;
+  margin: 10 10;
+}
