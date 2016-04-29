@@ -80,7 +80,7 @@ article{
   margin: 5% 15%;
   padding-bottom: 30px;
   position: relative;
-  border-style: solid;
+  border-style: groove;
   border-width: 5px;
   border-color: #D72E19;
   border-radius: 30px;
@@ -129,4 +129,8 @@ div a{
   font-family: cursive;
   text-decoration: none;
   color: #D72E19;
+}
+
+li:hover{
+  font-size: 30px;
 }
