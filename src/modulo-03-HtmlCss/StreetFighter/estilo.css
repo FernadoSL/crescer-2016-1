@@ -10,7 +10,7 @@ body{
   border-style: solid;
   border-color: white;
   border-width: thin;
-  margin: 300 auto;
+  margin: 200px auto;
   background-color: rgba(40,40,40,0.75);
   border-radius: 30px;
 }
@@ -54,4 +54,12 @@ body{
 .conteudo-pagina img{
   float:left;
   margin: 10 10;
+}
+
+.main-menu table{
+   margin: 0 20;
+}
+
+.conteudo-pagina p{
+   margin: 10px;
 }
