@@ -1,0 +1,314 @@
+.title {
+  margin-top: 20px;
+  display: inline;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: cursive;
+}
+
+.subtitle{
+  margin-top: 2px;
+  font-weight: bold;
+  font-size: 15px;
+  font-family: cursive;
+}
+
+header{
+  padding: 10px 10px;
+}
+
+header span{
+  padding: 3px;
+  margin: 5px;
+  position: relative;
+  left: 70%;
+}
+
+header span:hover{
+  border-radius: 5px;
+  background-color: #337AB7;
+  color: white;
+}
+
+header.sub-header{
+  position: absolute;
+  top: 100px;
+  left: 300px;
+  width: 75%;
+  height: 80px;
+}
+
+header ol{
+  position: relative;
+  width: 15%;
+  top: -60px;
+  left: 800px;
+}
+
+.link-mobile{
+  display: none;
+}
+
+/*retira headers e imagens de perfil*/
+@media screen and (max-width: 540px){
+  .menu-header{
+    display: none;
+  }
+  .menu{
+    height: 200px;
+  }
+  header.sub-header{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: inherit;
+    width: 280px;
+    height: auto;
+    background-color: rgba(37,37,37,1);
+    border-style: none;
+    border-radius: 0px;
+    background-image: url(img1.png);
+    background-size: 125px;
+    background-blend-mode: color-dodge;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+  header ol{
+    display: none;
+  }
+  .title{
+    color: #337AB7;
+    font-family: inherit;
+    margin-bottom: 2px;
+  }
+  .subtitle{
+    margin: 12px 0px;
+    color: #E9FAFD;
+    font-family: inherit;
+  }
+  .link-mobile{
+    padding: 03px 79px;
+    display: block;
+  }
+  .img-perfil{
+    display: none;
+  }
+  .navbar{
+    display: none;
+  }
+}
+
+.img-perfil{
+  height: 50px;
+  width: 50px;
+  position: relative;
+}
+
+.img-perfil.redonda{
+  float: left;
+  margin: 10px;
+  margin-bottom: 0px;
+  border-radius: 50%;
+  left: 0%;
+}
+
+.img-perfil.quadrada{
+  left: 70%;
+}
+
+.perfil{
+  margin-top: -20px;
+  padding: 5px;
+  height: 120px;
+  width: 280px;
+  background-color: #35353B;
+}
+
+.perfil p{
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: white;
+}
+
+/*ajusta menu, perfil e seus textos*/
+@media screen and (max-width: 540px) {
+  .perfil{
+    height: 160px;
+  }
+  .perfil p{
+    margin-top: 30px;
+  }
+}
+
+.tipo-dropdown{
+  display: none;
+  float: right;
+  margin: 10px;
+  margin-top: -25px;
+  color: white;
+}
+
+.icones{
+  margin-left: 20px;
+}
+
+.icones .glyphicon{
+  color: #79797F;
+  margin: 20px;
+  padding: 2px;
+}
+
+.icones .glyphicon:hover{
+  background-color: white;
+  border-radius: 5px;
+}
+
+/*transforma opções do header em um menu drop down*/
+@media screen and (min-width: 540px) {
+  .tipo-dropdown.glyphicon{
+    display: none;
+  }
+}
+
+.menu .nav-pills{
+  height: 100%;
+  width: 280px;
+  border-radius: 0px;
+}
+
+.menu p{
+  font-size: 15px;
+  color: white;
+  margin: 5px;
+}
+
+article.container{
+  position: absolute;
+  top: 200px;
+  left: 300px;
+  width: 75%;
+  height: auto;
+  overflow: auto;
+}
+
+label label{
+  font-size: 12px;
+  color: silver;
+  font-weight: normal;
+}
+
+.form-group.menor{
+  display: inline-block;
+  width: 30%;
+}
+
+.form-group.menor.caixa-texto{
+  display: inline-table;
+  height: 10%;
+  position: relative;
+  top: -36px;
+}
+
+.form-group.multi-escolha{
+  display: inline-block;
+  width: 20%;
+  margin: 10px;
+}
+
+.caixa{
+  height: 110px;
+  width: 210px;
+  border-style: solid;
+  border-width: thin;
+  border-color: silver;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+}
+
+.pequena{
+  height: 110px;
+  width: 22%;
+
+}
+
+.retangulo{
+  height: 110px;
+  width: 95%;
+}
+
+.grande{
+  height: 320px;
+  width: 46.5%;
+}
+
+.invisivel{
+  padding: 20px 50px;
+  height: 70px;
+  width: 200px;
+  border-style: double;
+}
+
+.caixa .glyphicon{
+  padding: 20px;
+  font-size: 40px;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 50%;
+}
+
+.caixa .invisivel .glyphicon{
+  padding: 0px;
+  margin-left: 14px;
+  position: relative;
+  font-size: 20px;
+  border-style: none;
+  color: silver;
+}
+
+.cor-1{
+  color: green;
+  border-color: green;
+  background-color: #8BC34A;
+}
+
+.cor-2{
+  color: #337AB7;
+  border-color: #337AB7;
+  background-color: #00BCD4;
+}
+
+.cor-3{
+  color: red;
+  border-color: red;
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.cor-4{
+  color: yellow;
+  border-color: yellow;
+  background-color: rgba(180, 180, 0, 0.5);
+}
+
+.info{
+  position: relative;
+  top: -10px;
+  left: 5px;
+  font-weight: bold;
+}
+
+.num{
+  font-weight: lighter;
+  font-family: cursive;
+  top: -70px;
+  left: 80px;
+  font-size: 50px;
+  color: #337AB7;
+}
+
+.grafico{
+  height: 280px;
+  width: 400px;
+  margin: 10px;
+}

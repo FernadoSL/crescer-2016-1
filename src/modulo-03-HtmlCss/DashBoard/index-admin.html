@@ -1,0 +1,131 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dash</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="bootstrap.min.css">
+  <link rel="stylesheet" href="estilo.css">
+
+  <!-- bootstrap -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+  <header class="navbar navbar-default">
+
+    <nav class="menu-header">
+      <p class="title">Projeto crescer</p>
+      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+
+      <span>
+        <a href="">Logout</a>
+      </span>
+
+      <img class="img-perfil quadrada" src="foto.png" alt="" />
+
+    </nav>
+
+  </header>
+
+  <nav class="perfil">
+    <img class="img-perfil redonda" src="foto.png" alt="" />
+    <p>Fernando Schneider</p>
+    <span class="glyphicon glyphicon-th-list tipo-dropdown" aria-hidden="true"></span>
+    <p>fernando.leandro@cwi.com</p>
+    <div class="icones">
+        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+    </div>
+  </nav>
+
+  <nav class="menu">
+    <ul class="nav nav-pills nav-stacked navbar-inverse">
+      <li><p>Dashboards</p></li>
+      <li role="presentation" class="active"><a href="index-admin.html"><span class="glyphicon glyphicon-object-align-left" aria-hidden="true"></span>  Administrativo</a></li>
+      <li><p>Cadastros</p></li>
+      <li role="presentation"><a href="#"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>  Contato</a></li>
+      <li role="presentation"><a href="cadastro.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Usuário</a></li>
+    </ul>
+  </nav>
+
+  <header class="sub-header navbar navbar-default">
+      <p class="title">Dashboard</p>
+      <p class="subtitle">Administrativo</p>
+      <a href="container-mobile-db" class="link-mobile"><p class="subtitle">clique para expandir</p></a>
+      <ol class="breadcrumb">
+        <li><a href="#">Inicio</a></li>
+        <li>Admin.</li>
+      </ol>
+  </header>
+
+  <article class="navbar navbar-default sub-header container">
+
+    <div class="caixa pequena">
+      <span class="cor-4 glyphicon glyphicon-user" aria-hidden="true"></span>
+      <span class="info">Usuários:</span>
+      <span class="info">321</span>
+    </div>
+    <div class="caixa pequena">
+      <span class="cor-3 glyphicon glyphicon-envelope" aria-hidden="true"></span>
+      <span class="info">Mensagens:</span>
+      <span class="info">28</span>
+    </div>
+    <div class="caixa pequena">
+      <span class="cor-2 glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+      <span class="info">Projetos:</span>
+      <span class="info">02</span>
+    </div>
+    <div class="caixa pequena">
+      <span class="cor-1 glyphicon glyphicon-usd" aria-hidden="true"></span>
+      <span class="info">Lucro:</span>
+      <span class="info">1992,00</span>
+    </div>
+
+    <div class="caixa retangulo">
+      <div class="caixa invisivel">
+        <span class="info">Eventos:</span>
+        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+        <label><label>Hoje</label></label>
+        <span class="info num">18</span>
+      </div>
+      <div class="caixa invisivel">
+        <span class="info">Contratos:</span>
+        <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+        <label><label>Mês</label></label>
+        <span class="info num">10</span>
+      </div>
+      <div class="caixa invisivel">
+        <span class="info">Produtos:</span>
+        <span class="glyphicon glyphicon-hdd" aria-hidden="true"></span>
+        <label><label>Total</label></label>
+        <span class="info num">52</span>
+      </div>
+      <div class="caixa invisivel">
+        <span class="info">Vendidos:</span>
+        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+        <label><label>Hoje</label></label>
+        <span class="info num">30</span>
+      </div>
+    </div>
+
+    <div class="caixa grande">
+      <img  class="grafico" src="graf1.png" alt="" />
+    </div>
+    <div class="caixa grande">
+      <img class="grafico" src="graf2.png" alt="" />
+    </div>
+  </article>
+
+</body>
+</html>
