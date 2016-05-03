@@ -1,16 +1,15 @@
 'use strict'
 //exercicio 1
 var daisyGame = function(numero){
-  if(numero%2 === 0){ return 'love me not'}
-  else{return 'love me'};
+  return 'love me' + (numero%2 === 0 ? ' not': '');
 }
 
 //exercicio 2
-var maiorTexto = function(array){
+var maiorTexto = function(arrayDePalavras){
   var maiorPalavra = '';
 
-  for(var i in array){
-    if(array[i].length > maiorPalavra.length){maiorPalavra = array[i]};
+  for(var i in arrayDePalavras){
+    if(arrayDePalavras[i].length > maiorPalavra.length){maiorPalavra = arrayDePalavras[i]};
   }
 
   return maiorPalavra;
@@ -20,10 +19,10 @@ var maiorTexto = function(array){
 var instrutor = function(instrutor) {
   console.log('Olá querido instrutor', instrutor);
 }
-var imprime = function(array, fn) {
+var imprime = function(arrayDeInstrutores, fn) {
   if(typeof(fn) === 'function'){
-    for(var i in array){
-      fn(array[i]);
+    for(var i in arrayDeInstrutores){
+      fn(arrayDeInstrutores[i]);
     }
   }
 }
@@ -54,20 +53,26 @@ var fiboSum = function(num){
 
 //exercicio 6
 var queroCafe = function(mascada, precos) {
-  var result = '';
+  var result = [];
   for(var i in precos){
     if(precos[i]<=mascada){
-      result += precos[i] + ',';
+      result.push(precos[i]);
     }
   }
-  return result.substring(0,(result.length - 1));
+  result.sort();
+  return result.toString();
 }
 
 //exercicio 7
+var getTipo = function(num){
+  return num === null ? 'null' : typeof num !== 'undefined' && v.constructor === Array ? 'array' : typeof num;
+}
+
+
 var contarPorTipo = function(obj, tipoCampo){
   var cont = 0;
   for(var i in obj){
-    if(typeof(obj[i]) === tipoCampo){
+    if(getTipo(obj[i]) === tipoCampo){
       cont++;
     }
   }
