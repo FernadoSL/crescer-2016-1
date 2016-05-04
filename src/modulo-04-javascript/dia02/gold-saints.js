@@ -4,18 +4,12 @@ var goldSaints = JSON.parse('[{"id":1,"nome":"Mu","dataNascimento":"1967-03-27T0
 
 //exercicio1
 var obterDoadores = function(){
-  var doadores = [];
-  for(var i in goldSaints){
-    if(goldSaints[i].tipoSanguineo === 'O'){
-      doadores.push(goldSaints[i]);
-    }
-  }
-  return doadores;
+  return goldSaints.filter(function(e){
+    return e.tipoSanguineo === 'O';
+  });
 }
 
 //exercicio2
-
-
 var obterCavaleiroComMaisGolpes = function(){
   var maiorNumeroDeGolpes = 0;
   for(var i in goldSaints){
