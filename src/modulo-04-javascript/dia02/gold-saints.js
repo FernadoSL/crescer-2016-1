@@ -27,3 +27,105 @@ var obterCavaleiroComMaisGolpes = function(){
     return e.golpes.length === maiorNumeroDeGolpes;
   });
 }
+
+//exercicio3
+var obterMesesMaisAniver = function(){
+	var numeroMes = [];
+	var maisNiver = [];
+
+	for(var i=1; i<=12; i++){
+    var mes = goldSaints.filter(function(e){return e.dataNascimento.substring(5,7) == i})
+    if(maisNiver.length === mes.length){
+      numeroMes.push(i);
+    }else if (maisNiver.length < mes.length) {
+      maisNiver =  mes;
+      numeroMes = [];
+      numeroMes.push(i);
+    }
+
+	}
+	return numeroMes;
+}
+
+var aux = function(){
+  for(var i in goldSaints){
+    console.log(goldSaints[i].dataNascimento);
+  }
+}
+
+//exercicio4
+var alturaMedia = function(){
+  var mediaAltura = 0, numCavaleiros = 0;
+  for(var i in goldSaints){
+    mediaAltura += goldSaints[i].alturaCm;
+    numCavaleiros++;
+  }
+
+  return Math.round((mediaAltura/numCavaleiros))/100;
+}
+
+//exercicio5
+var alturaMediana = function(){
+  var arrayAltura = [];
+  for(var i in goldSaints){
+    arrayAltura.push(goldSaints[i].alturaCm);
+  }
+  arrayAltura.sort(function(a, b){return a-b});
+
+  var meio = Math.floor(arrayAltura.length/2);
+
+  if(arrayAltura.length % 2){
+    return arrayAltura[meio];
+  }else{
+    return Math.round((arrayAltura[meio-1] + arrayAltura[meio]) / 2.0)/100;
+  }
+}
+
+//exercicio6
+var obterPesoMedio = function(doadores){
+  var arrayAux = [];
+  var mediaPeso = 0, numCavaleiros = 0;
+  if(doadores){
+    arrayAux = obterDoadores();
+  }else{
+    arrayAux = goldSaints;
+  }
+  for(var i in arrayAux){
+    if(typeof(arrayAux[i].pesoLb) !== 'undefined'){
+      mediaPeso += arrayAux[i].pesoLb;
+      numCavaleiros++;
+    }
+  }
+
+  return Math.round((mediaPeso/numCavaleiros)/2.2046);
+}
+
+//exercicio7
+var obterIMC = function(){
+  var arrayIMC = [];
+  for(var i in goldSaints){
+    if(typeof(goldSaints[i].pesoLb) !== 'undefined'){
+      arrayIMC.push(calculaImc(i));
+    }
+  }
+  return arrayIMC;
+}
+
+var calculaImc = function(i){
+  var alturaMetro = 0;
+  var pesoKg = 0;
+  alturaMetro = goldSaints[i].alturaCm / 100;
+  pesoKg = goldSaints[i].pesoLb / 2.2046;
+  return (pesoKg/(alturaMetro*alturaMetro));
+}
+
+//exercicio8
+var sobrePeso = function(){
+  var arraySobrePeso = [];
+  for(var i in goldSaints){
+    if(calculaImc(i) > 25){
+      arraySobrePeso.push(goldSaints[i]);
+    }
+  }
+  return arraySobrePeso;
+}
