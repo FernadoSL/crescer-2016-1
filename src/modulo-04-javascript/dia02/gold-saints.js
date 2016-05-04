@@ -32,7 +32,6 @@ var obterCavaleiroComMaisGolpes = function(){
 var obterMesesMaisAniver = function(){
 	var numeroMes = [];
 	var maisNiver = [];
-
 	for(var i=1; i<=12; i++){
     var mes = goldSaints.filter(function(e){return e.dataNascimento.substring(5,7) == i})
     if(maisNiver.length === mes.length){
@@ -42,15 +41,8 @@ var obterMesesMaisAniver = function(){
       numeroMes = [];
       numeroMes.push(i);
     }
-
-	}
-	return numeroMes;
-}
-
-var aux = function(){
-  for(var i in goldSaints){
-    console.log(goldSaints[i].dataNascimento);
   }
+	return numeroMes;
 }
 
 //exercicio4
@@ -60,7 +52,6 @@ var alturaMedia = function(){
     mediaAltura += goldSaints[i].alturaCm;
     numCavaleiros++;
   }
-
   return Math.round((mediaAltura/numCavaleiros))/100;
 }
 
@@ -96,8 +87,7 @@ var obterPesoMedio = function(doadores){
       numCavaleiros++;
     }
   }
-
-  return Math.round((mediaPeso/numCavaleiros)/2.2046);
+  return Math.round(((mediaPeso/numCavaleiros)/2.2046)*100)/100;
 }
 
 //exercicio7
@@ -116,7 +106,7 @@ var calculaImc = function(i){
   var pesoKg = 0;
   alturaMetro = goldSaints[i].alturaCm / 100;
   pesoKg = goldSaints[i].pesoLb / 2.2046;
-  return (pesoKg/(alturaMetro*alturaMetro));
+  return Math.round((pesoKg/(alturaMetro*alturaMetro))*100)/100;
 }
 
 //exercicio8
