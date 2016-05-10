@@ -133,10 +133,13 @@ namespace Repositorio
         {
             throw new NotImplementedException();
         }
-
+        public bool ComparaAniver(Funcionario funcionario)
+        {
+            return funcionario.DataNascimento.Month == DateTime.Today.Month;
+        }
         public IList<Funcionario> AniversariantesDoMes()
         {
-            throw new NotImplementedException();
+            return Funcionarios.Where(Funcionarios => ComparaAniver(Funcionarios)).ToList();
         }
 
         public IList<dynamic> BuscaRapida()
