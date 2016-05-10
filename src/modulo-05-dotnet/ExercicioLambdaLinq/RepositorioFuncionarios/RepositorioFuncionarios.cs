@@ -96,27 +96,22 @@ namespace Repositorio
         public IList<Funcionario> BuscarPorNome(string nome)
         {
             return Funcionarios.Where(Funcionarios => Funcionarios.Nome.Contains(nome)).ToList();
-        }        
+        }       
 
+        public bool ComparaTurno(TurnoTrabalho[] turnos, Funcionario funcionario)
+        {
+            var result = false;
+            foreach(var turno in turnos)
+            {
+                result = funcionario.TurnoTrabalho.Equals(turno); 
+            }
+            return result;
+        }
         public IList<Funcionario> BuscarPorTurno(params TurnoTrabalho[] turnos)
         {
-            var turnosString = "";
-
-            if(turnos.Count() == 0)
-            {
-                return Funcionarios;
-            }
-            else
-            {
-                foreach(TurnoTrabalho turn in turnos)
-                {
-                    turnosString += turn.ToString();
-                }
-
-                return Funcionarios.Where(Funcionarios => Funcionarios.TurnoTrabalho.ToString().Contains(turnosString)).ToList();
-            }
-            
+            return Funcionarios.Where(Funcionario => ComparaTurno(turnos, Funcionario)).ToList();
         }        
+
         public bool ComparaIdade(int idade, Funcionario funcionario)
         {
             var idadeF = DateTime.Today.Subtract(funcionario.DataNascimento);
@@ -124,6 +119,7 @@ namespace Repositorio
             return ((idadeFunc < (idade + 5)) && (idadeFunc > (idade - 5)));
             
         }
+
         public IList<Funcionario> FiltrarPorIdadeAproximada(int idade)
         {
             return Funcionarios.Where(Funcionarios => ComparaIdade(idade, Funcionarios)).ToList(); 
@@ -144,7 +140,7 @@ namespace Repositorio
 
         public IList<dynamic> BuscaRapida()
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public IList<dynamic> QuantidadeFuncionariosPorTurno()
