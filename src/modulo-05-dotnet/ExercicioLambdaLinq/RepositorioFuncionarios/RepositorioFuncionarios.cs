@@ -103,7 +103,7 @@ namespace Repositorio
             var result = false;
             foreach(var turno in turnos)
             {
-                result = funcionario.TurnoTrabalho.Equals(turno); 
+                if (funcionario.TurnoTrabalho.Equals(turno)) { result = true; } 
             }
             return result;
         }
