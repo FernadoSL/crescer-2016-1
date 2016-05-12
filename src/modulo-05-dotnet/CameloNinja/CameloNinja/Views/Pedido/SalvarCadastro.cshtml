@@ -1,0 +1,34 @@
+﻿@model CameloNinja.Models.DadosItem
+
+@{
+    ViewBag.Title = "FinalizarCadastro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cadastro Realizado com Sucesso</h2>
+
+@using (Html.BeginForm()) 
+{
+   
+
+    <div class="form-horizontal">
+        <h4>Dados Item</h4>
+        <hr />
+        <div>
+            <ul>
+                <li>Nome do Produto: @Model.NomeProtuto</li>
+                <li>Valor do Produto: @Model.valorProduto</li>
+                <li>Nome do Cliente: @Model.NomeCliente</li>
+                <li>Data de Entrega: @Model.DataEntrega</li>
+                <li>Cidade: @Model.Cidade</li>
+                <li>Estado: @Model.Estado</li>
+                <li>Tipo de Pagamento: @Model.TipoPagamento</li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <button type="submit">
+        @Html.ActionLink("Voltar", "Index")
+    </button>
+}
