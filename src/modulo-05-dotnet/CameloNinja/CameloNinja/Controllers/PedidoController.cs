@@ -1,4 +1,5 @@
 ﻿using CameloNinja.Models;
+using LojaNinja.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,13 @@ namespace CameloNinja.Controllers
 {
     public class PedidoController : Controller
     {
-        // GET: Pedido
-        public ActionResult Index()
+        
+        public ActionResult Cadastro()
         {
             return View();
         }
 
-        public ActionResult SalvarCadastro(DadosItem model)
+        public ActionResult DetalhesPedido(Pedido model)
         {
             return View(model);
         }

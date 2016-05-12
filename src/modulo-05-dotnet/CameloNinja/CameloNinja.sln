@@ -5,6 +5,18 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameloNinja", "CameloNinja\CameloNinja.csproj", "{A46A03AE-2ACA-4BA6-8632-1DBDFB4639C9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - UI WEB", "1 - UI WEB", "{7D6312EA-1701-496B-B326-CB94C083A67F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Dominio", "2 - Dominio", "{683767E1-3426-4B2A-BF5E-1F5DB1EE8563}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Repositorio", "3 - Repositorio", "{31E9C2E6-F55F-453F-B8A6-5DEA0D6C768C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedido_Dominio", "Pedido_Dominio\Pedido_Dominio.csproj", "{2489447F-9796-4E96-91C2-E48D2F206A04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedido_Dominio_Teste", "Pedido_Dominio_Teste\Pedido_Dominio_Teste.csproj", "{CD847B81-A4C3-479E-94A9-F1AF5AD88635}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedido_Repositorio", "Pedido_Repositorio\Pedido_Repositorio.csproj", "{DE2ACCEB-4820-4AE9-B605-FBE7FB023FCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +27,26 @@ Global
 		{A46A03AE-2ACA-4BA6-8632-1DBDFB4639C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A46A03AE-2ACA-4BA6-8632-1DBDFB4639C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A46A03AE-2ACA-4BA6-8632-1DBDFB4639C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2489447F-9796-4E96-91C2-E48D2F206A04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2489447F-9796-4E96-91C2-E48D2F206A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2489447F-9796-4E96-91C2-E48D2F206A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2489447F-9796-4E96-91C2-E48D2F206A04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD847B81-A4C3-479E-94A9-F1AF5AD88635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD847B81-A4C3-479E-94A9-F1AF5AD88635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD847B81-A4C3-479E-94A9-F1AF5AD88635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD847B81-A4C3-479E-94A9-F1AF5AD88635}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE2ACCEB-4820-4AE9-B605-FBE7FB023FCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE2ACCEB-4820-4AE9-B605-FBE7FB023FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE2ACCEB-4820-4AE9-B605-FBE7FB023FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE2ACCEB-4820-4AE9-B605-FBE7FB023FCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A46A03AE-2ACA-4BA6-8632-1DBDFB4639C9} = {7D6312EA-1701-496B-B326-CB94C083A67F}
+		{2489447F-9796-4E96-91C2-E48D2F206A04} = {683767E1-3426-4B2A-BF5E-1F5DB1EE8563}
+		{CD847B81-A4C3-479E-94A9-F1AF5AD88635} = {683767E1-3426-4B2A-BF5E-1F5DB1EE8563}
+		{DE2ACCEB-4820-4AE9-B605-FBE7FB023FCB} = {31E9C2E6-F55F-453F-B8A6-5DEA0D6C768C}
 	EndGlobalSection
 EndGlobal
