@@ -16,9 +16,11 @@ namespace CameloNinja.Controllers
             return View();
         }
 
-        public ActionResult DetalhesPedido(Pedido model)
+        public ActionResult DetalhesPedido(DadosItem model)
         {
-            return View(model);
+
+            var pedido = new Pedido(model.DataEntrega, model.NomeProtuto, model.valorProduto, TipoPagamento.Amex, model.NomeCliente, model.Cidade, model.Estado);
+            return View(pedido);
         }
     }
 }

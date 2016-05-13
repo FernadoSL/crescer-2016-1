@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LojaNinja.Dominio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -24,7 +25,7 @@ namespace CameloNinja.Models
         public int valorProduto { get; set; }
 
         [DisplayName("Tipo de pagamento")]
-        public string TipoPagamento { get; set; }
+        public TipoPagamento TipoPagamento { get; set; }
 
         [Required(ErrorMessage = "Informe o nome do cliente")]
         [DisplayName("Nome do cliente")]

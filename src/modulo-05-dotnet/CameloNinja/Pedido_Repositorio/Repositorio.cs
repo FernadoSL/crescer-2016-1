@@ -10,7 +10,7 @@ namespace Pedido_Repositorio
 {
     public class Repositorio
     {
-        private const string PATH_ARQUIVO = @"C:\Users\fabriciosilva\Desktop\Vendas.txt";
+        private const string PATH_ARQUIVO = @"~Content\Vendas.txt";
 
         public List<Pedido> ObterPedidos()
         {
