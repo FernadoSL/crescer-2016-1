@@ -160,6 +160,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Pedido\DetalhesPedido.cshtml" />
+    <Content Include="Views\Pedido\Lista.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -174,6 +175,10 @@
     <ProjectReference Include="..\Pedido_Dominio\Pedido_Dominio.csproj">
       <Project>{2489447f-9796-4e96-91c2-e48d2f206a04}</Project>
       <Name>Pedido_Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pedido_Repositorio\Pedido_Repositorio.csproj">
+      <Project>{de2acceb-4820-4ae9-b605-fbe7fb023fcb}</Project>
+      <Name>Pedido_Repositorio</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
