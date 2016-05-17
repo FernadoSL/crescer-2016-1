@@ -10,7 +10,7 @@ namespace Pedido_Repositorio
 {
     public class Repositorio
     {
-        private const string PATH_ARQUIVO = @"~\Content\Vendas.txt";
+        private const string PATH_ARQUIVO = @"E:\CDC\C#\CameloNinja\CameloNinja\Content\vendas.txt";
 
         public List<Pedido> ObterPedidos()
         {

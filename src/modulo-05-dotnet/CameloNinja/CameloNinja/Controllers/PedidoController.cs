@@ -11,15 +11,13 @@ namespace CameloNinja.Controllers
 {
     public class PedidoController : Controller
     {
-        
-        public ActionResult Cadastro()
+        public ActionResult CadastroPedido()
         {
             return View();
         }
 
         public ActionResult DetalhesPedido(DadosItem model)
         {
-
             var pedido = new Pedido(model.DataEntrega, model.NomeProtuto, model.valorProduto, TipoPagamento.Amex, model.NomeCliente, model.Cidade, model.Estado);
             return View(pedido);
         }

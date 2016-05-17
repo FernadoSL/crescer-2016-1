@@ -17,7 +17,7 @@ namespace CameloNinja.Models
         public DateTime DataEntrega { get; set; }
 
         [Required(ErrorMessage = "Informe o nome do produto")]
-        [DisplayName("Nome do Produto")]
+        [DisplayName("NomeUsuario do Produto")]
         public string NomeProtuto { get; set; }
 
         [Required(ErrorMessage = "Informe o valor do produto")]
@@ -28,15 +28,15 @@ namespace CameloNinja.Models
         public TipoPagamento TipoPagamento { get; set; }
 
         [Required(ErrorMessage = "Informe o nome do cliente")]
-        [DisplayName("Nome do cliente")]
+        [DisplayName("NomeUsuario do cliente")]
         public string NomeCliente { get; set; }
 
         [Required(ErrorMessage = "Informe o nome da Cidade")]
-        [DisplayName("Nome da Cidade")]
+        [DisplayName("NomeUsuario da Cidade")]
         public string Cidade { get; set; }
 
         [Required(ErrorMessage = "Informe o nome do Estado")]
-        [DisplayName("Nome do Estado")]
+        [DisplayName("NomeUsuario do Estado")]
         public string Estado { get; set; }
     }
 }
