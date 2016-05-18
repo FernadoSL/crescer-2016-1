@@ -43,6 +43,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -149,6 +157,7 @@
     <Compile Include="Models\DadosItem.cs" />
     <Compile Include="Models\DadosUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ServicoPermissao.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -182,6 +191,14 @@
     <ProjectReference Include="..\Pedido_Repositorio\Pedido_Repositorio.csproj">
       <Project>{de2acceb-4820-4ae9-b605-fbe7fb023fcb}</Project>
       <Name>Pedido_Repositorio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RopositorioUsuarioEF\RopositorioUsuarioEF.csproj">
+      <Project>{fe1b9f70-abeb-405e-ac1f-d424ad61b95b}</Project>
+      <Name>RopositorioUsuarioEF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Usuario\Usuario_Dominio.csproj">
+      <Project>{56edb60c-9af7-4138-a841-1def91c04851}</Project>
+      <Name>Usuario_Dominio</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

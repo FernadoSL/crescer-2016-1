@@ -15,7 +15,8 @@ namespace CameloNinja.Models
 
         [Required(ErrorMessage = "Informe um e-mail válido")]
         [DisplayName("Email")]
-        public string Email { get; set; }
+        [EmailAddress]
+        public string Email { get; set; }   
 
         [Required(ErrorMessage = "Senha inválida")]
         [MinLength(8, ErrorMessage = "Senha muito curta")]

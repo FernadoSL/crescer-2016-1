@@ -11,7 +11,7 @@ namespace RopositorioUsuarioEF
 {
     public class ContextoDeDados : DbContext
     {
-        public ContextoDeDados() : base("CameloNinja")
+        public ContextoDeDados() : base("CameloNinjaHome")
         {
 
         }
