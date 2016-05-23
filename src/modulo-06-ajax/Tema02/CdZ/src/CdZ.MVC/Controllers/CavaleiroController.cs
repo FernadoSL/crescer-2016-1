@@ -16,6 +16,11 @@ namespace CdZ.MVC.Controllers
             return View();
         }
 
+        public ActionResult FormularioCavaleiro()
+        {
+            return View();
+        }
+
         [HttpGet]
         public JsonResult Get()
         {
