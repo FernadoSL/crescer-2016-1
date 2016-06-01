@@ -16,3 +16,19 @@ Begin
   
   DBMS_OUTPUT.PUT_LINE('Nome: ' || vNome || ' Data Primeiro Pedido: ' || vPrimeiraData || ' Data Ultimo Pedido: ' || vUltimaData || ' Soma de Pedidos: ' || vSoma || ' Nome da Cidade: ' || vNomeCidade);
 End;
+
+Declare
+  vUf Cidade.UF%Type;
+  vNome Cidade.Nome%Type;
+  vExiste INTEGER;
+Begin
+  select cid.Uf , cid.NOME, count(1)
+  into vUf , vNome, vExiste
+  from Cidade cid
+  where cid.Uf = upper('&_UF') and cid.NOME = '&_NomeCidade';
+  if(vExiste > 0) then
+    DBMS_OUTPUT.PUT_LINE('Nome: ');
+  end if;
+End;
+
+select * from cidade;
