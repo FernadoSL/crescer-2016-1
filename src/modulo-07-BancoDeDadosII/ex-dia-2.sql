@@ -18,16 +18,18 @@ Begin
 End;
 
 Declare
-  vUf Cidade.UF%Type;
-  vNome Cidade.Nome%Type;
+  vUf Cidade.UF%Type := upper('&_UF');
+  vNome Cidade.Nome%Type := '&_NomeCidade';
   vExiste INTEGER;
 Begin
-  select cid.Uf , cid.NOME, count(1)
-  into vUf , vNome, vExiste
+  select count(1)
+  into vExiste
   from Cidade cid
-  where cid.Uf = upper('&_UF') and cid.NOME = '&_NomeCidade';
-  if(vExiste > 0) then
-    DBMS_OUTPUT.PUT_LINE('Nome: ');
+  where cid.Uf = vUf and cid.NOME = vNome;
+  if(vExiste = 0) then
+    insert into Cidade(Nome, Uf)
+    values(vNome, vUf);
+    commit;
   end if;
 End;
 
