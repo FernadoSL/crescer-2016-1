@@ -14,10 +14,6 @@ begin
   return vId;
 end;
 
-begin
-  dbms_output.put_line(Id_Ultimo_Concurso);
-end;
-
 create function VALOR_ARRECADADO (pId number) return number as
   vValor number;
 begin
@@ -29,6 +25,34 @@ begin
   return vValor;
 end;
 
+create or replace function GERA_VALOR return number as
+  vValor number;
+  vAcumulou number;
+  vIdUltimoConcurso number;
+  vPremioUltimaSena number;
 begin
-  DBMS_OUTPUT.PUT_LINE(VALOR_ARRECADADO(Id_Ultimo_Concurso));
+  vIdUltimoConcurso := Id_Ultimo_Concurso;
+  vValor := VALOR_ARRECADADO (vIdUltimoConcurso);
+  
+  select ACUMULOU 
+  into vAcumulou
+  from CONCURSO
+  where IDCONCURSO = vIdUltimoConcurso; 
+  
+  select PREMIO_SENA
+  into vPremioUltimaSena
+  from CONCURSO
+  where IDCONCURSO = vIdUltimoConcurso; 
+  
+  if(vAcumulou > 0) then
+    vValor := vValor + vPremioUltimaSena;
+  end if;
+  
+  return vValor;
 end;
+
+begin
+  DBMS_OUTPUT.PUT_LINE(GERA_VALOR);
+end;
+
+update CONCURSO set ACUMULOU = 1 where IDCONCURSO = 1824;
