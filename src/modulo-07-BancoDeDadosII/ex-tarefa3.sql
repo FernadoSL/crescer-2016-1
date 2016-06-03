@@ -44,6 +44,8 @@ begin
   from CONCURSO
   where IDCONCURSO = vIdUltimoConcurso; 
   
+  vValor := (vValor * 45,3)/100;
+  
   if(vAcumulou > 0) then
     vValor := vValor + vPremioUltimaSena;
   end if;
