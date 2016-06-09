@@ -32,7 +32,7 @@ public class ManipuladorArquivos {
                     try {
                         final boolean b = new File(nomeArquivo).createNewFile();
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        System.out.println("Comando inválido");
                     }
                     break;
                 case "rm $":
@@ -46,7 +46,10 @@ public class ManipuladorArquivos {
                        System.out.println(path);
                     }else{
                         System.out.println(nomeArquivo);
-                    }            
+                    }
+                    break;
+                default:
+                    System.out.println("Comando inválido");
             }
             
         }catch(Exception e){
