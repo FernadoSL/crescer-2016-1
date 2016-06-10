@@ -1,0 +1,1 @@
+insert into Pessoa(ID_PESSOA, NM_PESSOA) values (3, 'Leandro')
