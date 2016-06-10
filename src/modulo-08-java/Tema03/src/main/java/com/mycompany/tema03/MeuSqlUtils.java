@@ -7,6 +7,7 @@ package com.mycompany.tema03;
 
 import br.com.cwi.aula2.LeitorDeArquivo;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileReader;
@@ -23,6 +24,7 @@ import java.util.logging.Logger;
  *
  * @author FERNANDO
  */
+//TODO: refatorar métodos para tentar dimnuir suas responsabilidades
 public class MeuSqlUtils {
     
     public static void leitorSql(String caminho){
@@ -133,11 +135,46 @@ public class MeuSqlUtils {
         }
     }
     
+    public static void exportarCsv(String novoArquivo){
+        try(Connection connection = ConnectionUtils.getConnection()){
+            try(Statement statement = connection.createStatement()){
+                
+                ResultSet rs = statement.executeQuery("SELECT * FROM PESSOA");
+                File file = new File(novoArquivo);
+                BufferedWriter bufferedWriter = null;
+                
+                try{
+                    final boolean b = file.createNewFile();
+                } catch (IOException ex) {
+                    Logger.getLogger(MeuSqlUtils.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                try{
+                    bufferedWriter = LeitorDeArquivo.getWriter(file.getAbsolutePath());
+                } catch (IOException ex) {
+                    Logger.getLogger(MeuSqlUtils.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                while(rs.next()){
+                    try{
+                        bufferedWriter.write(rs.getLong("ID_PESSOA") + ";" + rs.getString("NM_PESSOA"));
+                        bufferedWriter.newLine();
+                        bufferedWriter.flush();
+                    } catch (IOException ex) {
+                        Logger.getLogger(MeuSqlUtils.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(MeuSqlUtils.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public static void main(String[] args) {
         //leitorSql("C:\\Users\\FERNANDO\\Documents\\CienciasDaComputacao\\Tema03");
         //imprimeTabela("select * from Pessoa");
-        importarCsv("C:\\Users\\FERNANDO\\Documents\\crescer-2016-1\\src\\modulo-08-java\\Tema03\\atributosCSV.txt");
-        
+        //importarCsv("C:\\Users\\FERNANDO\\Documents\\crescer-2016-1\\src\\modulo-08-java\\Tema03\\atributosCSV.txt");
+        exportarCsv("TesteExportação.txt");
     }
     
 }
