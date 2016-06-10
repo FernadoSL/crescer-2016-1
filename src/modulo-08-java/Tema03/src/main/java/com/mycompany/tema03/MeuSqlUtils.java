@@ -12,9 +12,12 @@ import java.io.FileFilter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -93,9 +96,48 @@ public class MeuSqlUtils {
         }
     }
     
+    public static void importarCsv(String caminho){
+        try(BufferedReader bufferedReader= LeitorDeArquivo.getReader(caminho)){
+            
+            Long ID;
+            String Nome;
+            String linha = bufferedReader.readLine();
+            String sqlInsert = "INSERT INTO PESSOA (ID_PESSOA, NM_PESSOA) VALUES(?, ?)";
+            
+            while(linha != null){
+                try{
+                    ID = Long.parseLong(linha.split("\\;")[0]);
+                    Nome = linha.split("\\;")[1];
+                    
+                    try(Connection connection = ConnectionUtils.getConnection()){
+                        try(PreparedStatement preparedStatement = connection.prepareStatement(sqlInsert)){
+                            preparedStatement.setLong(1, ID);
+                            preparedStatement.setString(2, Nome);
+                            preparedStatement.executeUpdate();
+                        }catch(final SQLException e){
+                            System.err.format("SQLException: %s", e);
+                        }
+                    }catch(final SQLException e){
+                        System.err.format("SQLException: %s", e);
+                    }
+                    
+                }catch(Exception e){
+                    
+                }
+                
+                linha = bufferedReader.readLine();
+            }
+            
+        } catch (IOException ex) {
+            Logger.getLogger(MeuSqlUtils.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public static void main(String[] args) {
         //leitorSql("C:\\Users\\FERNANDO\\Documents\\CienciasDaComputacao\\Tema03");
-        imprimeTabela("select * from Pessoa");
+        //imprimeTabela("select * from Pessoa");
+        importarCsv("C:\\Users\\FERNANDO\\Documents\\crescer-2016-1\\src\\modulo-08-java\\Tema03\\atributosCSV.txt");
+        
     }
     
 }
