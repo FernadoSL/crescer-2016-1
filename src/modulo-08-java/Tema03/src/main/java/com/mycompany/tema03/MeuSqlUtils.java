@@ -12,6 +12,7 @@ import java.io.FileFilter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -69,8 +70,32 @@ public class MeuSqlUtils {
         
     }
     
+    public static void imprimeTabela(String select){
+        try(Connection connection = ConnectionUtils.getConnection()){
+            try(Statement statement = connection.createStatement()){
+                
+                ResultSet rs = statement.executeQuery(select);
+                final int numColunas = rs.getMetaData().getColumnCount();
+                
+                for(int i=1; i<=numColunas; i++){
+                    System.out.print(rs.getMetaData().getColumnName(i) + "\t");
+                }
+                System.out.println();
+                while(rs.next()){
+                    for(int i=1; i<=numColunas; i++){
+                        System.out.print(rs.getString(i) + "\t");
+                    }
+                    System.out.println();
+                }
+            }
+        }catch(final SQLException e){
+            System.err.format("SQLException: %s", e);
+        }
+    }
+    
     public static void main(String[] args) {
-        leitorSql("C:\\Users\\FERNANDO\\Documents\\CienciasDaComputacao\\Tema03");
+        //leitorSql("C:\\Users\\FERNANDO\\Documents\\CienciasDaComputacao\\Tema03");
+        imprimeTabela("select * from Pessoa");
     }
     
 }
