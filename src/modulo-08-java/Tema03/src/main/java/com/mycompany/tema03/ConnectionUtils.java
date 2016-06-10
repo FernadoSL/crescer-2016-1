@@ -16,8 +16,8 @@ import java.sql.SQLException;
 public class ConnectionUtils {
     
     static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
-    static final String USER = "Crescer";
-    static final String PASS = "Crescer$5";
+    static final String USER = "CRESCER16";
+    static final String PASS = "CRESCER16";
     
     static Connection getConnection(){
         

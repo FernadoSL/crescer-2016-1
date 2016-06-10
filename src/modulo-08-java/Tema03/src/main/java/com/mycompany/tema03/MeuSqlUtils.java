@@ -27,6 +27,7 @@ import java.util.logging.Logger;
 //TODO: refatorar métodos para tentar dimnuir suas responsabilidades
 public class MeuSqlUtils {
     
+    @SuppressWarnings({"CallToPrintStackTrace", "null"})
     public static void leitorSql(String caminho){
         
         final File file = new File(caminho);
@@ -135,6 +136,7 @@ public class MeuSqlUtils {
         }
     }
     
+    @SuppressWarnings("null")
     public static void exportarCsv(String novoArquivo){
         try(Connection connection = ConnectionUtils.getConnection()){
             try(Statement statement = connection.createStatement()){
@@ -172,9 +174,9 @@ public class MeuSqlUtils {
     
     public static void main(String[] args) {
         //leitorSql("C:\\Users\\FERNANDO\\Documents\\CienciasDaComputacao\\Tema03");
-        //imprimeTabela("select * from Pessoa");
-        //importarCsv("C:\\Users\\FERNANDO\\Documents\\crescer-2016-1\\src\\modulo-08-java\\Tema03\\atributosCSV.txt");
-        exportarCsv("TesteExportação.txt");
+        imprimeTabela("select * from Pessoa");
+        //importarCsv("C:\\Users\\fernando.leandro\\Documents\\crescer-2016-1\\src\\modulo-08-java\\Tema03\\atributosCSV.txt");
+        //exportarCsv("TesteExportação.txt");
     }
     
 }
