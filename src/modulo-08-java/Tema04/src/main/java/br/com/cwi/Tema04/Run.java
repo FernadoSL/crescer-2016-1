@@ -18,9 +18,9 @@ public class Run {
         
     public static void main(String[] args) {
         Cidade cd = new Cidade();
-        cd.setId((long)1);
-        cidadeDao.add(cd);
+        ExportadorCsv csv = new ExportadorCsv();
+        csv.exportaCSV("csv1", "Cidade");
+        
     }
 
-    
 }

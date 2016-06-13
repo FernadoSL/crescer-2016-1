@@ -19,19 +19,21 @@ import javax.persistence.Query;
 public class AppRun {
 
     
-    static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("Crescer");
-    static final EntityManager em = emf.createEntityManager();    
     
     public static void main(String[] args) {
+    
+        final EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRESCER16");
+        final EntityManager em = emf.createEntityManager();    
+    
         
         Pessoa pessoa = new Pessoa();
         
         
-        /* Insert pessoa no banco
+        // Insert pessoa no banco
         em.getTransaction().begin();
         em.persist(pessoa);
         em.getTransaction().commit();
-        */
+        
         
         /*Delete pssoa no banco
         em.getTransaction().begin();
