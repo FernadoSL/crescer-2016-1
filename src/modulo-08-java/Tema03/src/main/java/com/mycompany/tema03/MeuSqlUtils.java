@@ -51,7 +51,7 @@ public class MeuSqlUtils {
                     linha = bufferReader.readLine();
                 }
                 
-                try(final Connection connection = ConnectionUtils.getConnection()){
+                try(final Connection connection = MeuConnectionUtils.getConnection()){
                     try(final Statement statement = connection.createStatement()){
                         statement.executeQuery(comandoSql);
                     }catch (final SQLException e) {
@@ -77,7 +77,7 @@ public class MeuSqlUtils {
     }
     
     public static void imprimeTabela(String select){
-        try(Connection connection = ConnectionUtils.getConnection()){
+        try(Connection connection = MeuConnectionUtils.getConnection()){
             try(Statement statement = connection.createStatement()){
                 
                 ResultSet rs = statement.executeQuery(select);
@@ -112,7 +112,7 @@ public class MeuSqlUtils {
                     ID = Long.parseLong(linha.split("\\;")[0]);
                     Nome = linha.split("\\;")[1];
                     
-                    try(Connection connection = ConnectionUtils.getConnection()){
+                    try(Connection connection = MeuConnectionUtils.getConnection()){
                         try(PreparedStatement preparedStatement = connection.prepareStatement(sqlInsert)){
                             preparedStatement.setLong(1, ID);
                             preparedStatement.setString(2, Nome);
@@ -138,7 +138,7 @@ public class MeuSqlUtils {
     
     @SuppressWarnings("null")
     public static void exportarCsv(String novoArquivo){
-        try(Connection connection = ConnectionUtils.getConnection()){
+        try(Connection connection = MeuConnectionUtils.getConnection()){
             try(Statement statement = connection.createStatement()){
                 
                 ResultSet rs = statement.executeQuery("SELECT * FROM PESSOA");

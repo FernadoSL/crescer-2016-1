@@ -13,13 +13,13 @@ import java.sql.SQLException;
  *
  * @author FERNANDO
  */
-public class ConnectionUtils {
+public class MeuConnectionUtils {
     
     static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
-    static final String USER = "CRESCER16";
-    static final String PASS = "CRESCER16";
+    static final String USER = "CRESCER";
+    static final String PASS = "Crescer$5";
     
-    static Connection getConnection(){
+    public static Connection getConnection(){
         
         Connection connection = null;
         

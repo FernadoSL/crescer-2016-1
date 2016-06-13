@@ -19,7 +19,7 @@ import javax.persistence.Query;
 public class AppRun {
 
     
-    static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRESCER16");
+    static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("Crescer");
     static final EntityManager em = emf.createEntityManager();    
     
     public static void main(String[] args) {
