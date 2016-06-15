@@ -30,39 +30,41 @@ import javax.persistence.Table;
     @NamedQuery(name = "Cidade.findByUf", query = "SELECT c FROM Cidade c WHERE c.uf = :uf")})
 public class Cidade implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    
     @Id
     @Basic(optional = false)
     @Column(name = "IDCIDADE")
-    private BigDecimal idcidade;
+    private long idcidade;
+    
     @Basic(optional = false)
     @Column(name = "NOME")
     private String nome;
+    
     @Basic(optional = false)
     @Column(name = "UF")
     private String uf;
+    
     @OneToMany(mappedBy = "idcidade")
     private List<Cliente> clienteList;
 
     public Cidade() {
     }
 
-    public Cidade(BigDecimal idcidade) {
+    public Cidade(long idcidade) {
         this.idcidade = idcidade;
     }
 
-    public Cidade(BigDecimal idcidade, String nome, String uf) {
+    public Cidade(long idcidade, String nome, String uf) {
         this.idcidade = idcidade;
         this.nome = nome;
         this.uf = uf;
     }
 
-    public BigDecimal getIdcidade() {
+    public long getIdcidade() {
         return idcidade;
     }
 
-    public void setIdcidade(BigDecimal idcidade) {
+    public void setIdcidade(long idcidade) {
         this.idcidade = idcidade;
     }
 
@@ -89,30 +91,4 @@ public class Cidade implements Serializable {
     public void setClienteList(List<Cliente> clienteList) {
         this.clienteList = clienteList;
     }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idcidade != null ? idcidade.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Cidade)) {
-            return false;
-        }
-        Cidade other = (Cidade) object;
-        if ((this.idcidade == null && other.idcidade != null) || (this.idcidade != null && !this.idcidade.equals(other.idcidade))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "br.com.cwi.entitys.Cidade[ idcidade=" + idcidade + " ]";
-    }
-    
 }

@@ -36,19 +36,24 @@ public class Pedidoitem implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "IDPEDIDOITEM")
-    private BigDecimal idpedidoitem;
+    private long idpedidoitem;
+    
     @Basic(optional = false)
     @Column(name = "QUANTIDADE")
     private BigDecimal quantidade;
+    
     @Basic(optional = false)
     @Column(name = "PRECOUNITARIO")
     private BigDecimal precounitario;
+    
     @Basic(optional = false)
     @Column(name = "SITUACAO")
     private Character situacao;
+    
     @JoinColumn(name = "IDPEDIDO", referencedColumnName = "IDPEDIDO")
     @ManyToOne(optional = false)
     private Pedido idpedido;
+    
     @JoinColumn(name = "IDPRODUTO", referencedColumnName = "IDPRODUTO")
     @ManyToOne
     private Produto idproduto;
@@ -56,22 +61,22 @@ public class Pedidoitem implements Serializable {
     public Pedidoitem() {
     }
 
-    public Pedidoitem(BigDecimal idpedidoitem) {
+    public Pedidoitem(long idpedidoitem) {
         this.idpedidoitem = idpedidoitem;
     }
 
-    public Pedidoitem(BigDecimal idpedidoitem, BigDecimal quantidade, BigDecimal precounitario, Character situacao) {
+    public Pedidoitem(long idpedidoitem, BigDecimal quantidade, BigDecimal precounitario, Character situacao) {
         this.idpedidoitem = idpedidoitem;
         this.quantidade = quantidade;
         this.precounitario = precounitario;
         this.situacao = situacao;
     }
 
-    public BigDecimal getIdpedidoitem() {
+    public long getIdpedidoitem() {
         return idpedidoitem;
     }
 
-    public void setIdpedidoitem(BigDecimal idpedidoitem) {
+    public void setIdpedidoitem(long idpedidoitem) {
         this.idpedidoitem = idpedidoitem;
     }
 
@@ -114,30 +119,4 @@ public class Pedidoitem implements Serializable {
     public void setIdproduto(Produto idproduto) {
         this.idproduto = idproduto;
     }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idpedidoitem != null ? idpedidoitem.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Pedidoitem)) {
-            return false;
-        }
-        Pedidoitem other = (Pedidoitem) object;
-        if ((this.idpedidoitem == null && other.idpedidoitem != null) || (this.idpedidoitem != null && !this.idpedidoitem.equals(other.idpedidoitem))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "br.com.cwi.entitys.Pedidoitem[ idpedidoitem=" + idpedidoitem + " ]";
-    }
-    
 }

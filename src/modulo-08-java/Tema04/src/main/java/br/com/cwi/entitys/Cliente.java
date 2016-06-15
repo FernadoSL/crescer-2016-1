@@ -37,29 +37,35 @@ import javax.persistence.Table;
     @NamedQuery(name = "Cliente.findBySituacao", query = "SELECT c FROM Cliente c WHERE c.situacao = :situacao")})
 public class Cliente implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @Basic(optional = false)
     @Column(name = "IDCLIENTE")
-    private BigDecimal idcliente;
+    private long idcliente;
+    
     @Basic(optional = false)
     @Column(name = "NOME")
     private String nome;
+    
     @Basic(optional = false)
     @Column(name = "RAZAOSOCIAL")
     private String razaosocial;
+    
     @Column(name = "ENDERECO")
     private String endereco;
+    
     @Column(name = "BAIRRO")
     private String bairro;
+    
     @Column(name = "CEP")
     private Integer cep;
+    
     @Basic(optional = false)
     @Column(name = "SITUACAO")
     private Character situacao;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idcliente")
     private List<Pedido> pedidoList;
+    
     @JoinColumn(name = "IDCIDADE", referencedColumnName = "IDCIDADE")
     @ManyToOne
     private Cidade idcidade;
@@ -67,22 +73,22 @@ public class Cliente implements Serializable {
     public Cliente() {
     }
 
-    public Cliente(BigDecimal idcliente) {
+    public Cliente(long idcliente) {
         this.idcliente = idcliente;
     }
 
-    public Cliente(BigDecimal idcliente, String nome, String razaosocial, Character situacao) {
+    public Cliente(long idcliente, String nome, String razaosocial, Character situacao) {
         this.idcliente = idcliente;
         this.nome = nome;
         this.razaosocial = razaosocial;
         this.situacao = situacao;
     }
 
-    public BigDecimal getIdcliente() {
+    public long getIdcliente() {
         return idcliente;
     }
 
-    public void setIdcliente(BigDecimal idcliente) {
+    public void setIdcliente(long idcliente) {
         this.idcliente = idcliente;
     }
 
@@ -148,31 +154,5 @@ public class Cliente implements Serializable {
 
     public void setIdcidade(Cidade idcidade) {
         this.idcidade = idcidade;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idcliente != null ? idcliente.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Cliente)) {
-            return false;
-        }
-        Cliente other = (Cliente) object;
-        if ((this.idcliente == null && other.idcliente != null) || (this.idcliente != null && !this.idcliente.equals(other.idcliente))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "br.com.cwi.entitys.Cliente[ idcliente=" + idcliente + " ]";
-    }
-    
+    }    
 }

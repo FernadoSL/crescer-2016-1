@@ -32,43 +32,45 @@ import javax.persistence.Table;
     @NamedQuery(name = "Material.findByPrecocusto", query = "SELECT m FROM Material m WHERE m.precocusto = :precocusto")})
 public class Material implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @Basic(optional = false)
     @Column(name = "IDMATERIAL")
-    private BigDecimal idmaterial;
+    private long idmaterial;
+    
     @Basic(optional = false)
     @Column(name = "DESCRICAO")
     private String descricao;
+    
     @Basic(optional = false)
     @Column(name = "PESOLIQUIDO")
     private BigDecimal pesoliquido;
+    
     @Basic(optional = false)
     @Column(name = "PRECOCUSTO")
     private BigDecimal precocusto;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idmaterial")
     private List<Produtomaterial> produtomaterialList;
 
     public Material() {
     }
 
-    public Material(BigDecimal idmaterial) {
+    public Material(long idmaterial) {
         this.idmaterial = idmaterial;
     }
 
-    public Material(BigDecimal idmaterial, String descricao, BigDecimal pesoliquido, BigDecimal precocusto) {
+    public Material(long idmaterial, String descricao, BigDecimal pesoliquido, BigDecimal precocusto) {
         this.idmaterial = idmaterial;
         this.descricao = descricao;
         this.pesoliquido = pesoliquido;
         this.precocusto = precocusto;
     }
 
-    public BigDecimal getIdmaterial() {
+    public long getIdmaterial() {
         return idmaterial;
     }
 
-    public void setIdmaterial(BigDecimal idmaterial) {
+    public void setIdmaterial(long idmaterial) {
         this.idmaterial = idmaterial;
     }
 
@@ -102,31 +104,5 @@ public class Material implements Serializable {
 
     public void setProdutomaterialList(List<Produtomaterial> produtomaterialList) {
         this.produtomaterialList = produtomaterialList;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idmaterial != null ? idmaterial.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Material)) {
-            return false;
-        }
-        Material other = (Material) object;
-        if ((this.idmaterial == null && other.idmaterial != null) || (this.idmaterial != null && !this.idmaterial.equals(other.idmaterial))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "br.com.cwi.entitys.Material[ idmaterial=" + idmaterial + " ]";
-    }
-    
+    }  
 }

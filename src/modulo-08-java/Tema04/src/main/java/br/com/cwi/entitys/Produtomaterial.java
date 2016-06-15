@@ -29,17 +29,18 @@ import javax.persistence.Table;
     @NamedQuery(name = "Produtomaterial.findByQuantidade", query = "SELECT p FROM Produtomaterial p WHERE p.quantidade = :quantidade")})
 public class Produtomaterial implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @Basic(optional = false)
     @Column(name = "IDPRODUTOMATERIAL")
-    private BigDecimal idprodutomaterial;
+    private long idprodutomaterial;
+    
     @Column(name = "QUANTIDADE")
     private BigDecimal quantidade;
+    
     @JoinColumn(name = "IDMATERIAL", referencedColumnName = "IDMATERIAL")
     @ManyToOne(optional = false)
     private Material idmaterial;
+    
     @JoinColumn(name = "IDPRODUTO", referencedColumnName = "IDPRODUTO")
     @ManyToOne(optional = false)
     private Produto idproduto;
@@ -47,15 +48,15 @@ public class Produtomaterial implements Serializable {
     public Produtomaterial() {
     }
 
-    public Produtomaterial(BigDecimal idprodutomaterial) {
+    public Produtomaterial(long idprodutomaterial) {
         this.idprodutomaterial = idprodutomaterial;
     }
 
-    public BigDecimal getIdprodutomaterial() {
+    public long getIdprodutomaterial() {
         return idprodutomaterial;
     }
 
-    public void setIdprodutomaterial(BigDecimal idprodutomaterial) {
+    public void setIdprodutomaterial(long idprodutomaterial) {
         this.idprodutomaterial = idprodutomaterial;
     }
 
@@ -81,31 +82,5 @@ public class Produtomaterial implements Serializable {
 
     public void setIdproduto(Produto idproduto) {
         this.idproduto = idproduto;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idprodutomaterial != null ? idprodutomaterial.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Produtomaterial)) {
-            return false;
-        }
-        Produtomaterial other = (Produtomaterial) object;
-        if ((this.idprodutomaterial == null && other.idprodutomaterial != null) || (this.idprodutomaterial != null && !this.idprodutomaterial.equals(other.idprodutomaterial))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "br.com.cwi.entitys.Produtomaterial[ idprodutomaterial=" + idprodutomaterial + " ]";
-    }
-    
+    }   
 }

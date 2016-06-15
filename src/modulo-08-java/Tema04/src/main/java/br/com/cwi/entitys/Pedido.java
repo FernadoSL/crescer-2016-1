@@ -38,50 +38,54 @@ import javax.persistence.TemporalType;
     @NamedQuery(name = "Pedido.findBySituacao", query = "SELECT p FROM Pedido p WHERE p.situacao = :situacao")})
 public class Pedido implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @Basic(optional = false)
     @Column(name = "IDPEDIDO")
-    private BigDecimal idpedido;
+    private long idpedido;
+    
     @Basic(optional = false)
     @Column(name = "DATAPEDIDO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date datapedido;
+    
     @Column(name = "DATAENTREGA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataentrega;
+    
     @Basic(optional = false)
     @Column(name = "VALORPEDIDO")
     private BigDecimal valorpedido;
+    
     @Basic(optional = false)
     @Column(name = "SITUACAO")
     private Character situacao;
+    
     @JoinColumn(name = "IDCLIENTE", referencedColumnName = "IDCLIENTE")
     @ManyToOne(optional = false)
     private Cliente idcliente;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idpedido")
     private List<Pedidoitem> pedidoitemList;
 
     public Pedido() {
     }
 
-    public Pedido(BigDecimal idpedido) {
+    public Pedido(long idpedido) {
         this.idpedido = idpedido;
     }
 
-    public Pedido(BigDecimal idpedido, Date datapedido, BigDecimal valorpedido, Character situacao) {
+    public Pedido(long idpedido, Date datapedido, BigDecimal valorpedido, Character situacao) {
         this.idpedido = idpedido;
         this.datapedido = datapedido;
         this.valorpedido = valorpedido;
         this.situacao = situacao;
     }
 
-    public BigDecimal getIdpedido() {
+    public long getIdpedido() {
         return idpedido;
     }
 
-    public void setIdpedido(BigDecimal idpedido) {
+    public void setIdpedido(long idpedido) {
         this.idpedido = idpedido;
     }
 
@@ -132,30 +136,4 @@ public class Pedido implements Serializable {
     public void setPedidoitemList(List<Pedidoitem> pedidoitemList) {
         this.pedidoitemList = pedidoitemList;
     }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idpedido != null ? idpedido.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Pedido)) {
-            return false;
-        }
-        Pedido other = (Pedido) object;
-        if ((this.idpedido == null && other.idpedido != null) || (this.idpedido != null && !this.idpedido.equals(other.idpedido))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "br.com.cwi.entitys.Pedido[ idpedido=" + idpedido + " ]";
-    }
-    
 }

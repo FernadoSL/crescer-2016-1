@@ -37,40 +37,45 @@ import javax.persistence.TemporalType;
     @NamedQuery(name = "Produto.findBySituacao", query = "SELECT p FROM Produto p WHERE p.situacao = :situacao")})
 public class Produto implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @Basic(optional = false)
     @Column(name = "IDPRODUTO")
-    private BigDecimal idproduto;
+    private long idproduto;
+    
     @Basic(optional = false)
     @Column(name = "NOME")
     private String nome;
+    
     @Basic(optional = false)
     @Column(name = "DATACADASTRO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date datacadastro;
+    
     @Basic(optional = false)
     @Column(name = "PRECOCUSTO")
     private BigDecimal precocusto;
+    
     @Column(name = "PRECOVENDA")
     private BigDecimal precovenda;
+    
     @Basic(optional = false)
     @Column(name = "SITUACAO")
     private Character situacao;
+    
     @OneToMany(mappedBy = "idproduto")
     private List<Pedidoitem> pedidoitemList;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idproduto")
     private List<Produtomaterial> produtomaterialList;
 
     public Produto() {
     }
 
-    public Produto(BigDecimal idproduto) {
+    public Produto(long idproduto) {
         this.idproduto = idproduto;
     }
 
-    public Produto(BigDecimal idproduto, String nome, Date datacadastro, BigDecimal precocusto, Character situacao) {
+    public Produto(long idproduto, String nome, Date datacadastro, BigDecimal precocusto, Character situacao) {
         this.idproduto = idproduto;
         this.nome = nome;
         this.datacadastro = datacadastro;
@@ -78,11 +83,11 @@ public class Produto implements Serializable {
         this.situacao = situacao;
     }
 
-    public BigDecimal getIdproduto() {
+    public long getIdproduto() {
         return idproduto;
     }
 
-    public void setIdproduto(BigDecimal idproduto) {
+    public void setIdproduto(long idproduto) {
         this.idproduto = idproduto;
     }
 
@@ -141,30 +146,4 @@ public class Produto implements Serializable {
     public void setProdutomaterialList(List<Produtomaterial> produtomaterialList) {
         this.produtomaterialList = produtomaterialList;
     }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idproduto != null ? idproduto.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Produto)) {
-            return false;
-        }
-        Produto other = (Produto) object;
-        if ((this.idproduto == null && other.idproduto != null) || (this.idproduto != null && !this.idproduto.equals(other.idproduto))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "br.com.cwi.entitys.Produto[ idproduto=" + idproduto + " ]";
-    }
-    
 }
