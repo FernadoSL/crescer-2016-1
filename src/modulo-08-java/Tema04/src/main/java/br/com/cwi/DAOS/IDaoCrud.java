@@ -11,9 +11,9 @@ import java.util.List;
  *
  * @author FERNANDO
  */
-public interface DaoCrud {
-    void add(Object o);
-    void update(Object o);
-    void delete(Object o);
-    List<Object> listAll();
+public interface IDaoCrud<G>  {
+    void add(G g);
+    void update(G g);
+    void delete(G g);
+    List<G> listAll();
 }

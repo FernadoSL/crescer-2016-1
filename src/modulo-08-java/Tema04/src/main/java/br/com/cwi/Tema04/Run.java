@@ -7,6 +7,8 @@ package br.com.cwi.Tema04;
 
 import br.com.cwi.DAOS.CidadeDao;
 import br.com.cwi.entitys.Cidade;
+import java.math.BigDecimal;
+import java.util.List;
 
 /**
  *
@@ -17,10 +19,22 @@ public class Run {
     static CidadeDao cidadeDao = new CidadeDao();
         
     public static void main(String[] args) {
-        Cidade cd = new Cidade();
-        ExportadorCsv csv = new ExportadorCsv();
-        csv.exportaCSV("csv1", "Cidade");
         
+        Cidade c1 = new Cidade((long)1, "POA", "RS");
+        
+        cidadeDao.add(c1);
+        cidadeDao.add(new Cidade((long)2, "POA", "RS"));
+        cidadeDao.add(new Cidade((long)3, "POA", "RS"));
+        
+        c1.setNome("SaoLeopoldo");
+        
+        cidadeDao.update(c1);
+        
+        for(Cidade c : (List<Cidade>)cidadeDao.listAll()){
+            System.out.println(c.getNome());
+        }
+        
+        //csv.exportaCSV("csv1", "Cidade");
     }
 
 }
