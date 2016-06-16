@@ -6,19 +6,18 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <head>
-        <title>Crescer</title>
+        <title>TODO supply a title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
     </head>
     <body>
-        <ui:insert name="header" >
-            <ui:include src="Content/layout.xhtml" />
-        </ui:insert>
-        
-        <h:form>
-            <h:commandLink value="Cadastrar" action="form-pessoa"/>
-        </h:form>
+        <ui:composition>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"></link>
+            <link href="css-layout.css" rel="stylesheet" type="text/css"/>
+            <div id="header"><h1>Crescer 16</h1></div>
+        </ui:composition>
+
     </body>
 </html>
