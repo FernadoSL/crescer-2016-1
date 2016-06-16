@@ -2,26 +2,39 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
         <title>Cadastramento</title>
     </h:head>
     <h:body>
     
-        <h:form>
-            <h:panelGrid>
-                <h:inputText value="#{pessoaMB.nome}"/>
-                <h:inputText value="#{pessoaMB.idade}">
-                    <f:convertNumber/>
-                </h:inputText>
-                <h:selectOneMenu id="questionStatus" value="#{pessoaMB.sexo}" >
-                    <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
-                    <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
-                    <f:selectItem itemLabel="Outros" itemValue="Outros" />
-                </h:selectOneMenu>
-                <h:commandButton value="Cadastrar" action="#{pessoaMB.addicionaPessoa()}"/>
-                
-                <h:dataTable value="#{pessoaMB.pessoas}" var="pessoa">
+        <ui:insert name="header" >
+            <ui:include src="Content/layout.xhtml" />
+        </ui:insert>
+        <div class="meu-box">
+            <div class="form-group col-md-6">
+                <h:form>
+                    <h:panelGrid>
+                        <h:inputText class="form-control meu-input" value="#{pessoaMB.nome}"/>
+                        <h:inputText class="form-control meu-input" value="#{pessoaMB.idade}">
+                            <f:convertNumber/>
+                        </h:inputText>
+                        <h:selectOneMenu class="form-control meu-input" id="questionStatus" value="#{pessoaMB.sexo}" >
+                            <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+                            <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
+                            <f:selectItem itemLabel="Outros" itemValue="Outros" />
+                        </h:selectOneMenu>
+                        <h:commandButton class="btn btn-success btn-block meu-input" value="Cadastrar" action="#{pessoaMB.addicionaPessoa()}"/>
+
+                    </h:panelGrid>
+                </h:form>
+            </div>    
+        </div>
+        
+        <div class="meu-box">
+        <div class="col-md-6">
+                <h:dataTable class="meu-table" value="#{pessoaMB.pessoas}" var="pessoa">
                     <h:column>
                         <h:outputText value="#{pessoa.nome}"/>
                     </h:column>
@@ -32,12 +45,8 @@
                         <h:outputText value="#{pessoa.sexo}"/>
                     </h:column>
                 </h:dataTable>
-                
-                
-            </h:panelGrid>
-        </h:form>
-        
-        
+            </div>
+        </div>
         
     </h:body>
     
