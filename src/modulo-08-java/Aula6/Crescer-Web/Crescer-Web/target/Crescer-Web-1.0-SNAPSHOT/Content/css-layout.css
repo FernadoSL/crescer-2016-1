@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16-Jun-2016, 11:00:22
+    Author     : FERNANDO
+*/
+
+ .meu-header{
+    width: auto;
+    height: 100px;
+    padding: 10px;
+    margin: 0px;
+    background-color: #00cc33;
+    border-color: #33ff33;
+    border-style: double;
+}
+
+.meu-input{
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.meu-box{
+    width: 30%;
+    overflow: auto;
+    display: inline-table;
+    padding: 10px;
+    margin: 30px;
+    
+    border-style: double;
+    border-color: #33ff33
+}
+
