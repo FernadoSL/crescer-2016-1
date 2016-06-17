@@ -1,0 +1,5 @@
+br\com\cwi\controllers\Example.class
+br\com\cwi\services\PessoaService.class
+br\com\cwi\AppRun.class
+br\com\cwi\Pessoa.class
+br\com\cwi\controllers\PessoaRest.class
