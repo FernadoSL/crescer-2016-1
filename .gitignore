@@ -51,3 +51,5 @@ bld/
 [Bb]uild[Ll]og.*
 /src/modulo-08-java/Aula1/nbproject/
 /src/modulo-08-java/Tema04/target/
+/src/modulo-08-java/Aula7/crescer-entity/target/
+/src/modulo-08-java/Aula7/crescer-web/target/
