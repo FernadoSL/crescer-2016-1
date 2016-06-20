@@ -1,5 +1,6 @@
-C:\Users\fernando.leandro\Documents\NetBeansProjects\Aula8\spring-crescer-web\src\main\java\br\com\cwi\controllers\PessoaRest.java
-C:\Users\fernando.leandro\Documents\NetBeansProjects\Aula8\spring-crescer-web\src\main\java\br\com\cwi\Pessoa.java
-C:\Users\fernando.leandro\Documents\NetBeansProjects\Aula8\spring-crescer-web\src\main\java\br\com\cwi\AppRun.java
-C:\Users\fernando.leandro\Documents\NetBeansProjects\Aula8\spring-crescer-web\src\main\java\br\com\cwi\services\PessoaService.java
-C:\Users\fernando.leandro\Documents\NetBeansProjects\Aula8\spring-crescer-web\src\main\java\br\com\cwi\controllers\Example.java
+C:\Users\fernando.leandro\Documents\Instrutores\src\modulo-08-java\aula8\spring-crescer-web\src\main\java\br\com\crescer\AppRun.java
+C:\Users\fernando.leandro\Documents\Instrutores\src\modulo-08-java\aula8\spring-crescer-web\src\main\java\br\com\crescer\repository\PessoaRepository.java
+C:\Users\fernando.leandro\Documents\Instrutores\src\modulo-08-java\aula8\spring-crescer-web\src\main\java\br\com\crescer\services\PessoaService.java
+C:\Users\fernando.leandro\Documents\Instrutores\src\modulo-08-java\aula8\spring-crescer-web\src\main\java\br\com\crescer\controllers\PessoaController.java
+C:\Users\fernando.leandro\Documents\Instrutores\src\modulo-08-java\aula8\spring-crescer-web\src\main\java\br\com\crescer\controllers\PessoaRest.java
+C:\Users\fernando.leandro\Documents\Instrutores\src\modulo-08-java\aula8\spring-crescer-web\src\main\java\br\com\crescer\entity\Pessoa.java
